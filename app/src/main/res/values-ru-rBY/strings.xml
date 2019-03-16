@@ -1,0 +1,101 @@
+<resources>
+    <string name="app_name">My GGPK</string>
+    <string name="app_version">1.15</string>
+
+    <!--Главный экран-->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="day_tab_title">День</string>
+    <string name="main_tab_title">Основное</string>
+
+    <string name="nav_header_title">Политехнический колледж</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="general_btn_refresh">Обновить</string>
+
+    <string name="side_title_schedule">Расписание</string>
+
+    <string name="side_title_first">1 Курс</string>
+    <string name="side_title_AGB">АГБ</string>
+    <string name="side_title_TAP">ТОР</string>
+    <string name="side_title_PGB">ПГБ</string>
+    <string name="side_title_BDA">БДА</string>
+    <string name="side_title_VMS">ВМС</string>
+    <string name="side_title_PZT">ПЗТ</string>
+    <string name="side_title_AEP">АЭП</string>
+    <string name="side_title_BSB">БСК</string>
+
+    <string name="action_settings">Настройки</string>
+    <string name="action_developer">О приложении</string>
+    <string name="action_website">Сайт</string>
+
+    <!--Настройки-->
+    <string name="title_activity_settings">Настройки</string>
+
+    <string name="pref_title_group">Главный экран</string>
+    <string name="pref_title_night_mode">Ночной режим</string>
+    <string name="pref_title_language">Язык</string>
+    <string name="pref_title_notifications">Уведомления</string>
+    <string name="pref_title_summary_notifications">будет доступно в будущем</string>
+    <string name="pref_title_restart">Перезапустить</string>
+    <string name="pref_title_summary_restart">Нажмите для применения настроек</string>
+
+    <string-array name="pref_group_title">
+        <item>1 Курс</item>
+        <item>АГБ</item>
+        <item>ТОР</item>
+        <item>ПГБ</item>
+        <item>БДА</item>
+        <item>ВМС</item>
+        <item>ПЗТ</item>
+        <item>АЭП</item>
+        <item>БСК</item>
+    </string-array>
+
+    <string-array name="pref_group_values">
+        <item>http://www.ggpk.by/Raspisanie/Files/P_KURS.html</item>
+        <item>http://www.ggpk.by/Raspisanie/Files/AGB.html</item>
+        <item>http://www.ggpk.by/Raspisanie/Files/TAR.html</item>
+        <item>http://www.ggpk.by/Raspisanie/Files/PGB.html</item>
+        <item>http://www.ggpk.by/Raspisanie/Files/BDA.html</item>
+        <item>http://www.ggpk.by/Raspisanie/Files/VMS.html</item>
+        <item>http://www.ggpk.by/Raspisanie/Files/PZT.html</item>
+        <item>http://www.ggpk.by/Raspisanie/Files/AEP.html</item>
+        <item>http://www.ggpk.by/Raspisanie/Files/BSB.html</item>
+    </string-array>
+
+    <string-array name="pref_night_mode_title">
+        <item>Выкл</item>
+        <item>Вкл</item>
+    </string-array>
+
+    <string-array name="pref_night_mode_value">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="pref_language_title">
+        <item>Русский</item>
+        <item>English</item>
+    </string-array>
+
+    <string-array name="pref_language_value">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!--О Приложении-->
+    <string name="title_activity_developer">О Приложении</string>
+    <string name="todo">TODO</string>
+
+    <string name="Story">Описание</string>
+
+    <string name="dev_text">"         My GGPK - это простое, универсальное и доступное всем приложение. С его помощью каждый сможет быстро смотреть свое расписание, не отвлекаясь на надоедливые рекламы. Благодаря сея творению вы не будете опаздывать и пропускать пары. Данное приложение сделано специально для Гродненского Государственного Политехнического Колледжа и абсолютно всех его учащихся не зависимо от специальностей, курсов и семестров.     "</string>
+    <string name="dev_title_me">Разработал: Самойло Антоний</string>
+    <string name="dev_title_developer">Описание</string>
+    <string name="dev_title_share">Поделится</string>
+    <string name="dev_title_rate">Оценить</string>
+    <string name="dev_title_mail">Письмо разработчику</string>
+
+
+</resources>

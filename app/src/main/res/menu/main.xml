@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_refresh"
+        android:icon="@drawable/general_refresh_button"
+        android:title="@string/general_btn_refresh"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="1"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_developer"
+        android:orderInCategory="2"
+        android:title="@string/action_developer"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_website"
+        android:orderInCategory="3"
+        android:title="@string/action_website"
+        app:showAsAction="never" />
+</menu>
