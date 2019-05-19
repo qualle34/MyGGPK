@@ -96,6 +96,7 @@
     <string name="dev_title_share">Поделится</string>
     <string name="dev_title_rate">Оценить</string>
     <string name="dev_title_mail">Письмо разработчику</string>
+    <string name="dev_gitHub">GitHub</string>
 
 
 </resources>

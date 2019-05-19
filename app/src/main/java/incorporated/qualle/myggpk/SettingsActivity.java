@@ -10,7 +10,6 @@ import android.support.v7.app.ActionBar;
 import android.preference.PreferenceManager;
 import android.view.MenuItem;
 
-
 @SuppressLint("ExportedPreferenceActivity")
 public class SettingsActivity extends AppCompatPreferenceActivity {
 
@@ -60,7 +59,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
         }
     };
 
-    private void PreferenceSummaryForGroup (Preference preference) {      // Summary
+    private void PreferenceSummaryForGroup(Preference preference) {      // Summary
 
         preference.setOnPreferenceChangeListener(PreferenceSummaryToValueListener);
 

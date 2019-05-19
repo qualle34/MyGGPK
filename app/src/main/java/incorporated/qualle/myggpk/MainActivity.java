@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.net.Uri;
@@ -21,6 +22,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -41,8 +43,9 @@ public class MainActivity extends AppCompatActivity
 
     private WebView webView;
     private SwipeRefreshLayout swipe;
-    ImageView DarkImage;
+    ImageView darkImage;
 
+    private String noInternet;
     private String GroupURL;
     private String URL;
     static int TypeURL;
@@ -70,7 +73,7 @@ public class MainActivity extends AppCompatActivity
             getSharedPreferences("FIRST_RUN", MODE_PRIVATE).edit().putBoolean("isfirstrun", false).commit();
         }
 
-        NewTheme(); // Пасхалочка
+        Secret(); // Пасхалочка
         LanguageChanger();  // Смена языка
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -81,11 +84,11 @@ public class MainActivity extends AppCompatActivity
         tabLayout.addTab(tabLayout.newTab().setText(MainTab));
         TabsChanger();  // Смена вкладок
 
-        DarkImage = findViewById(R.id.image_dark_mode);
+        darkImage = findViewById(R.id.image_dark_mode);
 
         if (NightModeListener()) {    // Ночь
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-            DarkImage.setVisibility(View.GONE);
+            darkImage.setVisibility(View.GONE);
 
         } else {                      // День
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
@@ -117,7 +120,7 @@ public class MainActivity extends AppCompatActivity
         LoadWeb();
     }
 
-    public void NewTheme() {
+    public void Secret() {
         Boolean PasswordOne;
         Boolean PasswordTwo;
         Boolean PasswordThree;
@@ -127,7 +130,10 @@ public class MainActivity extends AppCompatActivity
         PasswordThree = getSharedPreferences("PASSWORD_THREE", MODE_PRIVATE).getBoolean("password_three", false);
 
         if (PasswordOne) {
-            Toast.makeText(this, "1", Toast.LENGTH_SHORT).show();
+
+            noInternet = "file:///android_asset/general_dino.html";
+        } else {
+            noInternet = "file:///android_asset/general_no_internet.html";
         }
         if (PasswordTwo) {
             Toast.makeText(this, "2", Toast.LENGTH_SHORT).show();
@@ -181,9 +187,7 @@ public class MainActivity extends AppCompatActivity
     public boolean LanguageListener() {
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        StringBuilder LanguageInfo = new StringBuilder();
-        LanguageInfo.append(sharedPreferences.getString("pref_language_list", "1"));
-        LanguageInf = LanguageInfo.toString();
+        LanguageInf = sharedPreferences.getString("pref_language_list", "2");
 
         if (LanguageInf.equals("2")) {
             return false;
@@ -196,13 +200,9 @@ public class MainActivity extends AppCompatActivity
 
         if (LanguageListener()) {
 
-            Locale locale = new Locale("ru");
-            Locale.setDefault(locale);
-            Configuration config = new Configuration();
-            config.locale = locale;
-            getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+            setLocale("ru");
 
-            NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+            NavigationView navigationView = findViewById(R.id.nav_view);
             Menu menu = navigationView.getMenu();
 
             menu.findItem(R.id.side_title_schedule).setTitle("Рассписание");
@@ -221,12 +221,7 @@ public class MainActivity extends AppCompatActivity
 
         } else {
 
-            Locale locale = new Locale("en");
-            Locale.setDefault(locale);
-            Configuration config = new Configuration();
-            config.locale = locale;
-            getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
-
+            setLocale("en");
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             Menu menu = navigationView.getMenu();
 
@@ -244,6 +239,17 @@ public class MainActivity extends AppCompatActivity
             DayTab = "Day";
             MainTab = "Main";
         }
+    }
+
+    public void setLocale(String lang) {
+
+        Locale myLocale = new Locale(lang);
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale = myLocale;
+        res.updateConfiguration(conf, dm);
+
     }
 
     protected boolean CheckOnlineListener() {
@@ -264,7 +270,7 @@ public class MainActivity extends AppCompatActivity
 
         if (!CheckOnlineListener()) {
 
-            webView.loadUrl("file:///android_assets/general_no_internet.html");
+            webView.loadUrl(noInternet);
         }
     }
 
@@ -297,7 +303,7 @@ public class MainActivity extends AppCompatActivity
 
             public void onReceivedError(WebView view, int errorCode, String description, String failingURL) {
 
-                webView.loadUrl("file:///android_asset/general_no_internet.html");
+                webView.loadUrl(noInternet);
             }
 
             public void onPageFinished(WebView view, String url) {

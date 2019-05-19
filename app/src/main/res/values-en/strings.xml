@@ -97,5 +97,6 @@
     <string name="dev_title_share">Share</string>
     <string name="dev_title_rate">Rate app</string>
     <string name="dev_title_mail">Message to developer</string>
+    <string name="dev_gitHub">GitHub</string>
 
 </resources>

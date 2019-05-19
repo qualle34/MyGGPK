@@ -21,9 +21,9 @@ public class DeveloperActivity extends AppCompatActivity {
     String MyMail = "qualle.inc@gmail.com";
     String MyURL = "https://play.google.com/store/apps/details?id=incorporated.qualle.myggpk";
     EditText InputPassword;
-    private String password_1 = "anime322";
-    private String password_2 = "sobolev";
-    private String password_3 = "xolod";
+    private String password_1 = "dinopassword";
+    private String password_2 = "password2";
+    private String password_3 = "password3";
 
 
     @Override
@@ -53,7 +53,6 @@ public class DeveloperActivity extends AppCompatActivity {
     public void OnRateClick(View view) {
 
         try {
-
             startActivity(new Intent(Intent.ACTION_VIEW,
                     Uri.parse("market://details?id=" + getPackageName())));
 
@@ -62,7 +61,6 @@ public class DeveloperActivity extends AppCompatActivity {
             startActivity(new Intent(Intent.ACTION_VIEW,
                     Uri.parse("http://play.google.com/store/apps/details?id=" + getPackageName())));
         }
-
     }
 
     public void OnShareClick(View view) {
@@ -74,6 +72,12 @@ public class DeveloperActivity extends AppCompatActivity {
         Share.putExtra(Intent.EXTRA_TEXT, Text);
 
         startActivity(Intent.createChooser(Share, "Поделиться"));
+    }
+
+    public void OnGitHubClick(View view) {
+
+        Intent Website = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/qualle34/My_GGPK"));
+        startActivity(Website);
     }
 
     public void OnLongPress() {
