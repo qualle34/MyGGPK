@@ -53,15 +53,15 @@
     </string-array>
 
     <string-array name="pref_group_values">
-        <item>http://www.ggpk.by/Raspisanie/Files/P_KURS.html</item>
-        <item>http://www.ggpk.by/Raspisanie/Files/AGB.html</item>
-        <item>http://www.ggpk.by/Raspisanie/Files/TAR.html</item>
-        <item>http://www.ggpk.by/Raspisanie/Files/PGB.html</item>
-        <item>http://www.ggpk.by/Raspisanie/Files/BDA.html</item>
-        <item>http://www.ggpk.by/Raspisanie/Files/VMS.html</item>
-        <item>http://www.ggpk.by/Raspisanie/Files/PZT.html</item>
-        <item>http://www.ggpk.by/Raspisanie/Files/AEP.html</item>
-        <item>http://www.ggpk.by/Raspisanie/Files/BSB.html</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
     </string-array>
 
     <string-array name="pref_night_mode_title">
@@ -70,8 +70,8 @@
     </string-array>
 
     <string-array name="pref_night_mode_value">
-        <item>1</item>
-        <item>2</item>
+        <item>false</item>
+        <item>true</item>
     </string-array>
 
     <string-array name="pref_language_title">
@@ -97,6 +97,4 @@
     <string name="dev_title_rate">Оценить</string>
     <string name="dev_title_mail">Письмо разработчику</string>
     <string name="dev_gitHub">GitHub</string>
-
-
 </resources>

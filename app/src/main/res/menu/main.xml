@@ -4,9 +4,9 @@
 
     <item
         android:id="@+id/action_refresh"
-        android:icon="@drawable/general_refresh_button"
+        android:icon="@drawable/refresh_button"
         android:title="@string/general_btn_refresh"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/action_settings"

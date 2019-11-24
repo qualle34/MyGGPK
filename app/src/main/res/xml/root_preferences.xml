@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+        android:defaultValue="1"
+        android:entries="@array/pref_group_title"
+        android:entryValues="@array/pref_group_values"
+        android:icon="@drawable/home"
+        android:key="pref_group_list"
+        android:title="@string/pref_title_group"
+        android:summary="Выбери группу"/>
+
+    <ListPreference
+        android:defaultValue="1"
+        android:entries="@array/pref_night_mode_title"
+        android:entryValues="@array/pref_night_mode_value"
+        android:icon="@drawable/night_mode"
+        android:key="pref_night_mode_list"
+        android:title="@string/pref_title_night_mode"
+        android:summary="День"/>
+
+    <!--<Preference-->
+    <!--android:icon="@drawable/painter"-->
+    <!--android:key="pref_color"-->
+    <!--android:title="Цвет"-->
+    <!--android:summary="Выбери цвет"/>-->
+
+    <ListPreference
+        android:defaultValue="1"
+        android:entries="@array/pref_language_title"
+        android:entryValues="@array/pref_language_value"
+        android:icon="@drawable/language"
+        android:key="pref_language_list"
+        android:title="@string/pref_title_language"
+        android:summary="Русский"/>
+
+    <Preference
+        android:icon="@drawable/refresh"
+        android:key="pref_restart"
+        android:title="@string/pref_title_restart"
+        android:summary="@string/pref_title_summary_restart"/>
+
+    <Preference
+        android:icon="@drawable/version"
+        android:summary="@string/app_version"
+        android:title="@string/app_name">
+    </Preference>
+
+</PreferenceScreen>

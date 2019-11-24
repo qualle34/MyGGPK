@@ -3,12 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <item android:title="@string/side_title_schedule"
-        android:id="@+id/side_title_schedule">
+    <item
+        android:id="@+id/side_title_schedule"
+        android:title="@string/side_title_schedule">
         <menu>
             <item
                 android:id="@+id/first_k"
-                android:icon="@drawable/side_first"
+                android:icon="@drawable/first"
                 android:title="@string/side_title_first" />
         </menu>
     </item>
@@ -16,35 +17,35 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/AGB"
-            android:icon="@drawable/side_agb"
+            android:icon="@drawable/agb"
             android:title="@string/side_title_AGB" />
         <item
             android:id="@+id/TAR"
-            android:icon="@drawable/side_tor"
+            android:icon="@drawable/tor"
             android:title="@string/side_title_TAP" />
         <item
             android:id="@+id/PGB"
-            android:icon="@drawable/side_pgb"
+            android:icon="@drawable/pgb"
             android:title="@string/side_title_PGB" />
         <item
             android:id="@+id/BDA"
-            android:icon="@drawable/side_bda"
+            android:icon="@drawable/bda"
             android:title="@string/side_title_BDA" />
         <item
             android:id="@+id/VMS"
-            android:icon="@drawable/side_vms"
+            android:icon="@drawable/vms"
             android:title="@string/side_title_VMS" />
         <item
             android:id="@+id/PZT"
-            android:icon="@drawable/side_pzt"
+            android:icon="@drawable/pzt"
             android:title="@string/side_title_PZT" />
         <item
             android:id="@+id/AEP"
-            android:icon="@drawable/side_aep"
+            android:icon="@drawable/aep"
             android:title="@string/side_title_AEP" />
         <item
             android:id="@+id/BSK"
-            android:icon="@drawable/side_bsk"
+            android:icon="@drawable/bsk"
             android:title="@string/side_title_BSB" />
     </group>
 </menu>
