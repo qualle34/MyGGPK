@@ -3,6 +3,8 @@ out/
 *.iml
 META-INF/
 gradle/
+.gradle/
+.idea/
 
 local.properties
 
