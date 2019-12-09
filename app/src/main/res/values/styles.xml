@@ -1,42 +1,59 @@
- <resources>
+<resources>
 
-        <!-- Стандартная тема приложения -->
-        <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
-            <!--Цвет панели действий-->
-            <item name="colorPrimary">@color/colorPrimary</item>
-            <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-            <item name="colorAccent">@color/colorAccent</item>
-        </style>
+    <style name="AppTheme" parent="Theme.MaterialComponents">
 
-        <style name="AppTheme.NoActionBar">
-            <item name="windowActionBar">false</item>
-            <item name="windowNoTitle">true</item>
-        </style>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/colorText</item>
 
-        <!--Главное меню панель действий-->
-        <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:textColorSecondary">@color/colorText</item>
 
-        <!--Меню-->
-        <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+        <item name="colorSecondary">@color/colorAccent</item>
+        <item name="colorSecondaryVariant">@color/colorAccent</item>
+        <item name="colorOnSecondary">@color/colorPrimary</item>
 
+        <item name="android:colorBackground">@color/colorPrimary</item>
+        <item name="colorOnBackground">@color/colorText</item>
 
+        <item name="colorSurface">@color/colorPrimary</item>
+        <item name="colorOnSurface">@color/colorText</item>
 
-     <!--<style name="OrangeTheme" parent="Theme.AppCompat.Light.NoActionBar" >-->
-         <!--<item name="colorPrimary">@color/colorOrange</item>-->
-         <!--<item name="colorPrimaryDark">@color/colorOrangeDark</item>-->
-         <!--<item name="colorAccent">@color/colorOrange</item>-->
-     <!--</style>-->
+        <item name="colorError">@color/colorError</item>
+        <item name="colorOnError">@color/colorPrimary</item>
 
-     <!--<style name="OrangeTheme.NoActionBar">-->
-         <!--<item name="windowActionBar">false</item>-->
-         <!--<item name="windowNoTitle">true</item>-->
-     <!--</style>-->
+    </style>
 
-     <!--&lt;!&ndash;Главное меню панель действий&ndash;&gt;-->
-     <!--<style name="OrangeTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />-->
+    <style name="AppTheme.NoActionBar" parent="Theme.MaterialComponents.NoActionBar">
 
-     <!--&lt;!&ndash;Меню&ndash;&gt;-->
-     <!--<style name="OrangeTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/colorText</item>
 
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:textColorSecondary">@color/colorText</item>
 
- </resources>
+        <item name="colorSecondary">@color/colorAccent</item>
+        <item name="colorSecondaryVariant">@color/colorAccent</item>
+        <item name="colorOnSecondary">@color/colorPrimary</item>
+
+        <item name="android:colorBackground">@color/colorPrimary</item>
+        <item name="colorOnBackground">@color/colorText</item>
+
+        <item name="colorSurface">@color/colorPrimary</item>
+        <item name="colorOnSurface">@color/colorText</item>
+
+        <item name="colorError">@color/colorError</item>
+        <item name="colorOnError">@color/colorPrimary</item>
+
+    </style>
+
+    <style name="AppTheme.DayNight" parent="Theme.MaterialComponents.DayNight">
+
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

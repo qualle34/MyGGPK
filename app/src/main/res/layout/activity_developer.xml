@@ -4,200 +4,152 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
     android:orientation="vertical"
-    tools:context=".DeveloperActivity"
-    tools:layout_editor_absoluteY="81dp">
+    tools:context=".DeveloperActivity">
 
     <View
-        android:layout_width="600dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="3dp"
-        android:background="@color/colorLightGrey"
-        app:layout_constraintBottom_toTopOf="@id/Rate"
+        android:id="@+id/bg"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Mail"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <View
-        android:layout_width="600dp"
-        android:layout_height="1dp"
-        android:background="@color/colorLightGrey"
-        app:layout_constraintBottom_toTopOf="@id/Share"
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="32dp"
+        android:background="@color/colorBackground"
+        android:contentDescription="@string/back"
+        android:onClick="back"
+        android:scaleType="fitStart"
+        app:layout_constraintBottom_toTopOf="@+id/bg"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Rate" />
-
-    <View
-        android:layout_width="600dp"
-        android:layout_height="1dp"
-        android:background="@color/colorLightGrey"
-        app:layout_constraintBottom_toTopOf="@id/About"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Share" />
-
-    <View
-        android:layout_width="600dp"
-        android:layout_height="1dp"
-        android:background="@color/colorLightGrey"
-        app:layout_constraintBottom_toTopOf="@id/Me"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/About" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/button" />
 
     <TextView
-        android:id="@+id/Mail"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:gravity="center|start"
-        android:onClick="onMailClick"
-        android:text="@string/dev_title_mail"
-        android:textColor="?android:attr/actionMenuTextColor"
-        android:textSize="15sp"
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_activity_developer"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toTopOf="@+id/bg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/mail"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/Rate"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:id="@+id/about"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/dev_text"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bg" />
+
+    <TextView
+        android:id="@+id/mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:gravity="center|start"
+        android:onClick="onMailClick"
+        android:text="@string/dev_title_mail"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/image_mail"
+        app:layout_constraintTop_toTopOf="@+id/image_mail" />
+
+    <TextView
+        android:id="@+id/rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:gravity="center|start"
         android:onClick="onRateClick"
         android:text="@string/dev_title_rate"
-        android:textColor="?android:attr/actionMenuTextColor"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/rate"
-        app:layout_constraintTop_toBottomOf="@id/Mail" />
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/image_rate"
+        app:layout_constraintTop_toTopOf="@+id/image_rate" />
 
     <TextView
-        android:id="@+id/Share"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:id="@+id/share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:gravity="center|start"
         android:onClick="onShareClick"
         android:text="@string/dev_title_share"
-        android:textColor="?android:attr/actionMenuTextColor"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/share"
-        app:layout_constraintTop_toBottomOf="@id/Rate" />
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/image_share"
+        app:layout_constraintTop_toTopOf="@+id/image_share" />
 
     <TextView
-        android:id="@+id/About"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:gravity="center|start"
-        android:text="@string/dev_title_developer"
-        android:textColor="?android:attr/actionMenuTextColor"
-        android:textSize="15sp"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/developer"
-        app:layout_constraintTop_toBottomOf="@id/Share" />
-
-    <TextView
-        android:id="@+id/Me"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="66dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:gravity="center|start"
-        android:text="@string/dev_title_me"
-        android:textColor="?android:attr/actionMenuTextColor"
-        android:textSize="16sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/About"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/rate"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/todo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mail"
-        app:srcCompat="@drawable/rate" />
-
-    <ImageView
-        android:id="@+id/mail"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/todo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/mail" />
-
-    <ImageView
-        android:id="@+id/share"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/todo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rate"
-        app:srcCompat="@drawable/share" />
-
-    <ImageView
-        android:id="@+id/developer"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/todo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/share"
-        app:srcCompat="@drawable/lamp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="351dp"
+        android:id="@+id/git"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="66dp"
-        android:layout_marginEnd="24dp"
-        android:text="@string/dev_text"
-        android:textColor="?android:attr/actionMenuTextColor"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/About" />
-
-    <TextView
-        android:id="@+id/gitHubLink"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="8dp"
         android:onClick="onGitHubClick"
-        android:text="@string/dev_gitHub"
-        android:textColor="@color/design_default_color_primary"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:text="@string/dev_title_git"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/image_git"
+        app:layout_constraintTop_toTopOf="@+id/image_git" />
+
+    <ImageView
+        android:id="@+id/image_mail"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="@string/dev_title_mail"
+        android:src="@drawable/ic_mail"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/about" />
+
+    <ImageView
+        android:id="@+id/image_rate"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="@string/dev_title_git"
+        android:src="@drawable/ic_star"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_mail" />
+
+    <ImageView
+        android:id="@+id/image_share"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="@string/dev_title_rate"
+        android:src="@drawable/ic_share"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_rate" />
+
+    <ImageView
+        android:id="@+id/image_git"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="@string/dev_title_share"
+        android:src="@drawable/ic_fire"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_share" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -29,6 +29,7 @@
     <string name="action_settings">Settings</string>
     <string name="action_developer">About app</string>
     <string name="action_website">Website</string>
+    <string name="action_main">Main</string>
 
     <!--Настройки-->
     <string name="title_activity_settings">Settings</string>
@@ -97,6 +98,7 @@
     <string name="dev_title_share">Share</string>
     <string name="dev_title_rate">Rate app</string>
     <string name="dev_title_mail">Message to developer</string>
-    <string name="dev_gitHub">GitHub</string>
+    <string name="dev_title_git">Source code</string>
+    <string name="back">back</string>
 
 </resources>

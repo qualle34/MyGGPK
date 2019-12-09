@@ -1,7 +1,7 @@
 package com.qualle.myggpk;
 
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.view.View;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,17 +15,11 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.settings_activity);
+        setContentView(R.layout.activity_settings);
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.settings, new SettingsFragment())
                 .commit();
-
-        ActionBar actionBar = getSupportActionBar();
-
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
     }
 
     public static class SettingsFragment extends PreferenceFragmentCompat {
@@ -35,7 +29,7 @@ public class SettingsActivity extends AppCompatActivity {
             setPreferencesFromResource(R.xml.root_preferences, rootKey);
 
             PreferenceSummary(findPreference("pref_group_list"));
-            PreferenceSummary(findPreference("pref_night_mode_list"));
+            PreferenceSummary(findPreference("pref_night_mode"));
             PreferenceSummary(findPreference("pref_language_list"));
 
             findPreference("pref_restart").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
@@ -48,6 +42,7 @@ public class SettingsActivity extends AppCompatActivity {
         }
 
         private Preference.OnPreferenceChangeListener PreferenceSummaryToValueListener = new Preference.OnPreferenceChangeListener() {
+
             @Override
             public boolean onPreferenceChange(Preference preference, Object value) {
                 String stringValue = value.toString();
@@ -76,12 +71,7 @@ public class SettingsActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            super.onBackPressed();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+    public void back(View view) {
+        super.onBackPressed();
     }
 }

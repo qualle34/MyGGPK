@@ -31,7 +31,12 @@ import com.google.android.material.tabs.TabLayout;
 import com.qualle.myggpk.group.Group;
 import com.qualle.myggpk.group.GroupFabric;
 import com.qualle.myggpk.settings.AppSettings;
+import com.qualle.myggpk.style.ExternalStyle;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -40,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private SwipeRefreshLayout swipe;
 
     private int groupId;
-    private boolean isMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +57,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         secret();
         changeLanguage();
         changeTheme();
-        createTabLayout();
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -71,10 +74,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             @Override
             public void onRefresh() {
-                load(groupId, isMain);
+                load(groupId);
             }
         });
-        load(groupId, isMain);
+        load(groupId);
     }
 
     @Override
@@ -110,13 +113,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.action_website:
-                Intent Website = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ggpk.by/index.php"));
-                startActivity(Website);
+                Intent website = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ggpk.by/index.php"));
+                startActivity(website);
                 break;
 
-            case R.id.action_refresh:
-                load(groupId, isMain);
-                webView.pageUp(true);
+            case R.id.action_main:
+                Intent main = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ggpk.by/index.php"));
+                startActivity(main);
                 break;
         }
 
@@ -127,49 +130,50 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
         switch (item.getItemId()) {
-            case R.id.first_k:
+
+            case R.id.first:
                 groupId = 1;
-                load(groupId, false);
+                load(groupId);
                 break;
 
-            case R.id.AGB:
+            case R.id.agb:
                 groupId = 2;
-                load(groupId, false);
+                load(groupId);
                 break;
 
-            case R.id.TAR:
+            case R.id.tor:
                 groupId = 3;
-                load(groupId, false);
+                load(groupId);
                 break;
 
-            case R.id.PGB:
+            case R.id.pgb:
                 groupId = 4;
-                load(groupId, false);
+                load(groupId);
                 break;
 
-            case R.id.BDA:
+            case R.id.bda:
                 groupId = 5;
-                load(groupId, false);
+                load(groupId);
                 break;
 
-            case R.id.VMS:
+            case R.id.vms:
                 groupId = 6;
-                load(groupId, false);
+                load(groupId);
                 break;
 
-            case R.id.PZT:
+            case R.id.pzt:
                 groupId = 7;
-                load(groupId, false);
+                load(groupId);
                 break;
 
-            case R.id.AEP:
+            case R.id.aep:
                 groupId = 8;
-                load(groupId, false);
+                load(groupId);
                 break;
 
-            case R.id.BSK:
+            case R.id.bsk:
                 groupId = 9;
-                load(groupId, false);
+                load(groupId);
                 break;
 
             default:
@@ -205,16 +209,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             NavigationView navigationView = findViewById(R.id.nav_view);
             Menu menu = navigationView.getMenu();
 
-            menu.findItem(R.id.side_title_schedule).setTitle("Рассписание");
-            menu.findItem(R.id.first_k).setTitle("1 Курс");
-            menu.findItem(R.id.AGB).setTitle("АГБ");
-            menu.findItem(R.id.TAR).setTitle("ТОР");
-            menu.findItem(R.id.PGB).setTitle("ПГБ");
-            menu.findItem(R.id.BDA).setTitle("БДА");
-            menu.findItem(R.id.VMS).setTitle("ВМС");
-            menu.findItem(R.id.PZT).setTitle("ПЗТ");
-            menu.findItem(R.id.AEP).setTitle("АЭП");
-            menu.findItem(R.id.BSK).setTitle("БСК");
+            menu.findItem(R.id.first).setTitle("1 Курс");
+            menu.findItem(R.id.agb).setTitle("АГБ");
+            menu.findItem(R.id.tor).setTitle("ТОР");
+            menu.findItem(R.id.pgb).setTitle("ПГБ");
+            menu.findItem(R.id.bda).setTitle("БДА");
+            menu.findItem(R.id.vms).setTitle("ВМС");
+            menu.findItem(R.id.pzt).setTitle("ПЗТ");
+            menu.findItem(R.id.aep).setTitle("АЭП");
+            menu.findItem(R.id.bsk).setTitle("БСК");
             navigationView.setNavigationItemSelectedListener(this);
 
         } else {
@@ -224,16 +227,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             NavigationView navigationView = findViewById(R.id.nav_view);
             Menu menu = navigationView.getMenu();
 
-            menu.findItem(R.id.side_title_schedule).setTitle("Schedule");
-            menu.findItem(R.id.first_k).setTitle("First year");
-            menu.findItem(R.id.AGB).setTitle("AGB");
-            menu.findItem(R.id.TAR).setTitle("TOR");
-            menu.findItem(R.id.PGB).setTitle("PGB");
-            menu.findItem(R.id.BDA).setTitle("BDA");
-            menu.findItem(R.id.VMS).setTitle("VMS");
-            menu.findItem(R.id.PZT).setTitle("PZT");
-            menu.findItem(R.id.AEP).setTitle("AEP");
-            menu.findItem(R.id.BSK).setTitle("BSK");
+            menu.findItem(R.id.first).setTitle("First year");
+            menu.findItem(R.id.agb).setTitle("AGB");
+            menu.findItem(R.id.tor).setTitle("TOR");
+            menu.findItem(R.id.pgb).setTitle("PGB");
+            menu.findItem(R.id.bda).setTitle("BDA");
+            menu.findItem(R.id.vms).setTitle("VMS");
+            menu.findItem(R.id.pzt).setTitle("PZT");
+            menu.findItem(R.id.aep).setTitle("AEP");
+            menu.findItem(R.id.bsk).setTitle("BSK");
             navigationView.setNavigationItemSelectedListener(this);
         }
     }
@@ -248,45 +250,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void changeTheme() {
-        ImageView darkImage = findViewById(R.id.image_dark_mode);
 
         if (AppSettings.getNightModeSettings(getApplicationContext())) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
 
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-            darkImage.setVisibility(View.GONE);
         }
-    }
-
-    private void createTabLayout() {
-        final TabLayout tabLayout = findViewById(R.id.tabs);
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.home));
-        tabLayout.addTab(tabLayout.newTab().setText(getResources().getString(R.string.main_tab_title)));
-
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-
-                if (tabLayout.getSelectedTabPosition() == 0) {
-                    isMain = false;
-                    load(groupId, false);
-
-                } else if (tabLayout.getSelectedTabPosition() == 1) {
-                    isMain = true;
-                    load(groupId, true);
-                }
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-            }
-        });
     }
 
     private boolean isOnline() {
@@ -295,7 +265,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void load(String url) {
+        String css = getResources().getString(R.string.css);
         webView = findViewById(R.id.webView);
+        webView.getSettings().setDomStorageEnabled(true);
 
         if (isOnline()) {
             webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
@@ -304,9 +276,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ONLY);
         }
 
-        webView.getSettings().setDomStorageEnabled(true);
-
-        webView.loadUrl(url);
+        webView.loadData(ExternalStyle.getWithStyle(url, css), "text/html; charset=UTF-8", null);
 
         swipe.setRefreshing(true);
         webView.setWebViewClient(new WebViewClient() {
@@ -321,13 +291,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
-    private void load(int id, boolean isMain) {
+    private void load(int id) {
         Group group = GroupFabric.getGroup(id);
-
-        if (isMain) {
-            load(group.getMainUrl());
-        } else {
-            load(group.getUrl());
-        }
+        load(group.getUrl());
     }
 }

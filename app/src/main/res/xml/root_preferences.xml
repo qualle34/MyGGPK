@@ -1,50 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ListPreference
-        android:defaultValue="1"
-        android:entries="@array/pref_group_title"
-        android:entryValues="@array/pref_group_values"
-        android:icon="@drawable/home"
-        android:key="pref_group_list"
-        android:title="@string/pref_title_group"
-        android:summary="Выбери группу"/>
+    <PreferenceCategory>
 
-    <ListPreference
-        android:defaultValue="1"
-        android:entries="@array/pref_night_mode_title"
-        android:entryValues="@array/pref_night_mode_value"
-        android:icon="@drawable/night_mode"
-        android:key="pref_night_mode_list"
-        android:title="@string/pref_title_night_mode"
-        android:summary="День"/>
+        <ListPreference
+            app:defaultValue="1"
+            app:entries="@array/pref_group_title"
+            app:entryValues="@array/pref_group_values"
+            app:icon="@drawable/ic_home"
+            app:key="pref_group_list"
+            app:summary="TODO"
+            app:title="@string/pref_title_group" />
 
-    <!--<Preference-->
-    <!--android:icon="@drawable/painter"-->
-    <!--android:key="pref_color"-->
-    <!--android:title="Цвет"-->
-    <!--android:summary="Выбери цвет"/>-->
+        <SwitchPreferenceCompat
+            app:icon="@drawable/ic_moon"
+            app:key="pref_night_mode"
+            app:summary="TODO"
+            app:title="@string/pref_title_night_mode" />
 
-    <ListPreference
-        android:defaultValue="1"
-        android:entries="@array/pref_language_title"
-        android:entryValues="@array/pref_language_value"
-        android:icon="@drawable/language"
-        android:key="pref_language_list"
-        android:title="@string/pref_title_language"
-        android:summary="Русский"/>
+        <ListPreference
+            app:defaultValue="1"
+            app:entries="@array/pref_language_title"
+            app:entryValues="@array/pref_language_value"
+            app:icon="@drawable/ic_translate"
+            app:key="pref_language_list"
+            app:summary="TODO"
+            app:title="@string/pref_title_language" />
 
-    <Preference
-        android:icon="@drawable/refresh"
-        android:key="pref_restart"
-        android:title="@string/pref_title_restart"
-        android:summary="@string/pref_title_summary_restart"/>
+        <Preference
+            app:icon="@drawable/ic_refresh"
+            app:key="pref_restart"
+            app:summary="TODO"
+            app:title="@string/pref_title_restart" />
 
-    <Preference
-        android:icon="@drawable/version"
-        android:summary="@string/app_version"
-        android:title="@string/app_name">
-    </Preference>
+        <Preference
+            app:icon="@drawable/ic_settings"
+            app:summary="@string/app_version"
+            app:title="@string/app_name" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

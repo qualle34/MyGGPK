@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/colorPrimary" />
+            <corners android:radius="35dp" />
+            <padding
+                android:bottom="40dp"
+                android:left="35dp"
+                android:right="40dp"
+                android:top="40dp" />
+        </shape>
+    </item>
+
+    <item android:drawable="@drawable/ic_arrow" />
+
+</layer-list>
