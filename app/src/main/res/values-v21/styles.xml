@@ -2,55 +2,69 @@
 
     <style name="AppTheme" parent="Theme.MaterialComponents">
 
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryVariant">@color/colorPrimary</item>
-        <item name="colorOnPrimary">@color/colorText</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorOnPrimary">@color/text</item>
 
-        <item name="android:textColor">@color/colorText</item>
-        <item name="android:textColorSecondary">@color/colorText</item>
+        <item name="android:textColor">@color/text</item>
+        <item name="android:textColorSecondary">@color/text</item>
 
-        <item name="android:statusBarColor">@color/colorPrimary</item>
-        <item name="android:navigationBarColor">@color/colorPrimary</item>
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorSecondaryVariant">@color/accent</item>
+        <item name="colorOnSecondary">@color/primary</item>
 
-        <item name="colorSecondary">@color/colorAccent</item>
-        <item name="colorSecondaryVariant">@color/colorAccent</item>
-        <item name="colorOnSecondary">@color/colorPrimary</item>
+        <item name="android:colorBackground">@color/primary</item>
+        <item name="colorOnBackground">@color/text</item>
 
-        <item name="android:colorBackground">@color/colorPrimary</item>
-        <item name="colorOnBackground">@color/colorText</item>
+        <item name="colorSurface">@color/primary</item>
+        <item name="colorOnSurface">@color/text</item>
 
-        <item name="colorSurface">@color/colorPrimary</item>
-        <item name="colorOnSurface">@color/colorText</item>
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/primary</item>
 
-        <item name="colorError">@color/colorError</item>
-        <item name="colorOnError">@color/colorPrimary</item>
+        <item name="android:textColorPrimary">@color/text</item>
+        <item name="actionMenuTextColor">@color/text</item>
+
+        <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
+        <item name="toolbarStyle">@style/RobotoButtonStyle</item>
+
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:navigationBarColor">@color/black</item>
 
     </style>
 
     <style name="AppTheme.NoActionBar" parent="Theme.MaterialComponents.NoActionBar">
 
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryVariant">@color/colorPrimary</item>
-        <item name="colorOnPrimary">@color/colorText</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorOnPrimary">@color/text</item>
 
-        <item name="android:textColor">@color/colorText</item>
-        <item name="android:textColorSecondary">@color/colorText</item>
+        <item name="android:textColor">@color/text</item>
+        <item name="android:textColorSecondary">@color/text</item>
 
-        <item name="android:statusBarColor">@color/colorPrimary</item>
-        <item name="android:navigationBarColor">@color/colorPrimary</item>
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorSecondaryVariant">@color/accent</item>
+        <item name="colorOnSecondary">@color/primary</item>
 
-        <item name="colorSecondary">@color/colorAccent</item>
-        <item name="colorSecondaryVariant">@color/colorAccent</item>
-        <item name="colorOnSecondary">@color/colorPrimary</item>
+        <item name="android:colorBackground">@color/primary</item>
+        <item name="colorOnBackground">@color/text</item>
 
-        <item name="android:colorBackground">@color/colorPrimary</item>
-        <item name="colorOnBackground">@color/colorText</item>
+        <item name="colorSurface">@color/primary</item>
+        <item name="colorOnSurface">@color/text</item>
 
-        <item name="colorSurface">@color/colorPrimary</item>
-        <item name="colorOnSurface">@color/colorText</item>
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/primary</item>
 
-        <item name="colorError">@color/colorError</item>
-        <item name="colorOnError">@color/colorPrimary</item>
+        <item name="android:textColorPrimary">@color/text</item>
+        <item name="actionMenuTextColor">@color/text</item>
+
+        <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
+        <item name="toolbarStyle">@style/RobotoButtonStyle</item>
+
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:navigationBarColor">@color/black</item>
 
     </style>
 
@@ -61,5 +75,13 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="RobotoTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="RobotoButtonStyle" parent="android:Widget.Holo.Button">
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
 
 </resources>

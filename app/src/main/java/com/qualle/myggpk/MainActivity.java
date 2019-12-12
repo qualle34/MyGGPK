@@ -10,11 +10,9 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -27,16 +25,11 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.tabs.TabLayout;
 import com.qualle.myggpk.group.Group;
 import com.qualle.myggpk.group.GroupFabric;
 import com.qualle.myggpk.settings.AppSettings;
 import com.qualle.myggpk.style.ExternalStyle;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URL;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -118,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.action_main:
-                Intent main = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ggpk.by/index.php"));
+                Intent main = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ggpk.by/"));
                 startActivity(main);
                 break;
         }

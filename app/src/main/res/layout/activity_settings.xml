@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
+    android:background="@color/primaryDark"
     android:orientation="vertical"
     tools:context=".SettingsActivity">
 
@@ -13,7 +13,7 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginStart="32dp"
-        android:background="@color/colorBackground"
+        android:background="@color/primaryDark"
         android:contentDescription="@string/back"
         android:onClick="back"
         android:scaleType="fitStart"
@@ -27,7 +27,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title_activity_settings"
-        android:textColor="@color/colorText"
         android:textSize="23sp"
         app:layout_constraintBottom_toTopOf="@+id/settings"
         app:layout_constraintEnd_toEndOf="parent"

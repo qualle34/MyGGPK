@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
+    android:background="@color/primaryDark"
     android:orientation="vertical"
     tools:context=".DeveloperActivity">
 
@@ -26,7 +26,7 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginStart="32dp"
-        android:background="@color/colorBackground"
+        android:background="@color/primaryDark"
         android:contentDescription="@string/back"
         android:onClick="back"
         android:scaleType="fitStart"
