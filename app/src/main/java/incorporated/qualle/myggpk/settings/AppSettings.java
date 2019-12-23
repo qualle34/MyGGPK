@@ -26,6 +26,16 @@ public class AppSettings {
         return sharedPreferences.getBoolean("pref_new_style", true);
     }
 
+    public static String getHtml(Context applicationContext, String url) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext);
+        return sharedPreferences.getString(url, "");
+    }
+
+    public static void setHtml(Context applicationContext, String url, String html) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext);
+        sharedPreferences.edit().putString(url, html).apply();
+    }
+
     public static boolean isVip(Context applicationContext){
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext);
         return sharedPreferences.getBoolean("password", false);

@@ -1,5 +1,6 @@
 package incorporated.qualle.myggpk.style;
 
+import android.content.Context;
 import android.os.AsyncTask;
 
 import java.io.BufferedReader;
@@ -9,6 +10,8 @@ import java.net.URL;
 import java.util.concurrent.ExecutionException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import incorporated.qualle.myggpk.settings.AppSettings;
 
 public class ExternalStyle {
 
@@ -40,20 +43,15 @@ public class ExternalStyle {
         }
     }
 
-    public static String getWithStyle(String url, String css) {
+    public static String getWithStyle(Context applicationContext, String url, String css, boolean isOnline) throws ExecutionException, InterruptedException {
         HtmlManager htmlManager = new HtmlManager();
         htmlManager.execute(url);
-        String result = null;
-
-        try {
-            result = setStyle(htmlManager.get(), css);
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        if (isOnline) {
+            AppSettings.setHtml(applicationContext, url, htmlManager.get());
+            return setStyle(htmlManager.get(), css);
+        } else {
+            return setStyle(AppSettings.getHtml(applicationContext, url), css);
         }
-
-        return result;
     }
 
     private static String setStyle(String html, String css) {

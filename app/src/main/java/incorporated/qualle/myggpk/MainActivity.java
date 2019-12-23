@@ -33,6 +33,7 @@ import incorporated.qualle.myggpk.settings.AppSettings;
 import incorporated.qualle.myggpk.style.ExternalStyle;
 
 import java.util.Locale;
+import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -260,7 +261,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return connectivityManager.getActiveNetworkInfo() != null;
     }
 
-    private void load(String url) {
+    private void load(String url) throws ExecutionException, InterruptedException {
         String css = getResources().getString(R.string.css);
         webView = findViewById(R.id.webView);
         webView.getSettings().setDomStorageEnabled(true);
@@ -269,7 +270,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
 
             if (AppSettings.getStyleSettings(getApplicationContext())) {
-                webView.loadData(ExternalStyle.getWithStyle(url, css), "text/html; charset=UTF-8", null);
+                webView.loadData(ExternalStyle.getWithStyle(getApplicationContext(),url, css, true), "text/html; charset=UTF-8", null);
+
             } else {
                 webView.loadUrl(url);
             }
@@ -277,7 +279,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ONLY);
             if (AppSettings.getStyleSettings(getApplicationContext())) {
-               // webView.loadData(ExternalStyle.getWithStyle(url, css), "text/html; charset=UTF-8", null);
+                webView.loadData(ExternalStyle.getWithStyle(getApplicationContext(),url, css, false), "text/html; charset=UTF-8", null);
             } else {
                 webView.loadUrl(url);
             }
@@ -298,6 +300,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void load(int id) {
         Group group = GroupFabric.getGroup(id);
-        load(group.getUrl());
+        try {
+            load(group.getUrl());
+        } catch (ExecutionException | InterruptedException ignore) {
+        }
     }
 }

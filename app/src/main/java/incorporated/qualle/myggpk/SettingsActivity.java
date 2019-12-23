@@ -32,11 +32,12 @@ public class SettingsActivity extends AppCompatActivity {
 
             PreferenceSummary(findPreference("pref_group_list"));
             PreferenceSummary(findPreference("pref_language_list"));
-            findPreference("pref_new_schedule").setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            final Preference styleSwitch = findPreference("pref_new_schedule");
+            styleSwitch.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object newValue) {
                     SharedPreferences sharedPreferences = android.preference.PreferenceManager.getDefaultSharedPreferences(getContext());
-                    sharedPreferences.edit().putBoolean("pref_new_style", true).apply();
+                    sharedPreferences.edit().putBoolean("pref_new_style", styleSwitch.isEnabled()).apply();
                     return true;
                 }
             });
