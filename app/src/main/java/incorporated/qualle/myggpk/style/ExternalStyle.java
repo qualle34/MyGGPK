@@ -1,4 +1,4 @@
-package com.qualle.myggpk.style;
+package incorporated.qualle.myggpk.style;
 
 import android.os.AsyncTask;
 
@@ -40,13 +40,6 @@ public class ExternalStyle {
         }
     }
 
-    public static String setStyle(String html, String css) {
-        String fontLink = "<link href=\"https://fonts.googleapis.com/css?family=Roboto&display=swap\" rel=\"stylesheet\">";
-        Pattern stylePattern = Pattern.compile("<style[^>]*>([\\s\\S]*)<\\/style>");
-        Matcher matcher = stylePattern.matcher(html);
-        return matcher.replaceAll(fontLink + "<style>" + css + "</style>");
-    }
-
     public static String getWithStyle(String url, String css) {
         HtmlManager htmlManager = new HtmlManager();
         htmlManager.execute(url);
@@ -61,5 +54,12 @@ public class ExternalStyle {
         }
 
         return result;
+    }
+
+    private static String setStyle(String html, String css) {
+        String fontLink = "<link href=\"https://fonts.googleapis.com/css?family=Roboto&display=swap\" rel=\"stylesheet\">";
+        Pattern stylePattern = Pattern.compile("<style[^>]*>([\\s\\S]*)<\\/style>");
+        Matcher matcher = stylePattern.matcher(html);
+        return matcher.replaceAll(fontLink + "<style>" + css + "</style>");
     }
 }

@@ -14,7 +14,7 @@
         app:contentInsetLeft="0dp"
         app:contentInsetStart="0dp"
         android:elevation="3dp"
-        android:background="@drawable/bg_appbar">
+        android:background="@drawable/bg_bottom">
 
         <TextView
             android:layout_width="match_parent"

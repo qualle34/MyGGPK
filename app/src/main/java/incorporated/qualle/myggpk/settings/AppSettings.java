@@ -1,4 +1,4 @@
-package com.qualle.myggpk.settings;
+package incorporated.qualle.myggpk.settings;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -19,6 +19,11 @@ public class AppSettings {
     public static int getLanguageSettings(Context applicationContext) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext);
         return Integer.parseInt(sharedPreferences.getString("pref_language_list", "1"));
+    }
+
+    public static boolean getStyleSettings(Context applicationContext) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext);
+        return sharedPreferences.getBoolean("pref_new_style", true);
     }
 
     public static boolean isVip(Context applicationContext){

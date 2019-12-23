@@ -18,7 +18,7 @@
         <item
             android:id="@+id/tor"
             android:icon="@drawable/tor"
-            android:title="@string/side_title_TAP" />
+            android:title="@string/side_title_TOP" />
 
         <item
             android:id="@+id/pgb"
@@ -48,7 +48,7 @@
         <item
             android:id="@+id/bsk"
             android:icon="@drawable/bsk"
-            android:title="@string/side_title_BSB" />
+            android:title="@string/side_title_BSK" />
 
     </group>
 

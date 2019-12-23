@@ -1,57 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">My GGPK</string>
-    <string name="app_version">1.15</string>
 
-    <!--Главный экран-->
+    <string name="app_name">My GGPK</string>
+    <string name="app_version">2.0</string>
+
+    <!-- Main -->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="day_tab_title">Day</string>
-    <string name="main_tab_title">Main</string>
-
-    <string name="nav_header_title">Polytechnic College</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="general_btn_refresh">Refresh</string>
-
-    <string name="side_title_schedule">Schedule</string>
-
     <string name="side_title_first">First year</string>
     <string name="side_title_AGB">AGB</string>
-    <string name="side_title_TAP">TOR</string>
+    <string name="side_title_TOP">TOR</string>
     <string name="side_title_PGB">PGB</string>
     <string name="side_title_BDA">BDA</string>
     <string name="side_title_VMS">VMS</string>
     <string name="side_title_PZT">PZT</string>
     <string name="side_title_AEP">AEP</string>
-    <string name="side_title_BSB">BSK</string>
+    <string name="side_title_BSK">BSK</string>
 
     <string name="action_settings">Settings</string>
     <string name="action_developer">About app</string>
     <string name="action_website">Website</string>
     <string name="action_main">Main</string>
 
-    <!--Настройки-->
+    <!-- Settings -->
     <string name="title_activity_settings">Settings</string>
 
     <string name="pref_title_group">General screen</string>
     <string name="pref_title_night_mode">Night mode</string>
     <string name="pref_title_language">Language</string>
     <string name="pref_title_notifications">Notifications</string>
-    <string name="pref_title_summary_notifications">Will be available in the future</string>
     <string name="pref_title_restart">Restart</string>
     <string name="pref_title_summary_restart">Click to apply settings</string>
 
     <string-array name="pref_group_title">
-        <item>1 Course</item>
-        <item>AGB</item>
-        <item>TOR</item>
-        <item>PGB</item>
-        <item>BDA</item>
-        <item>VMS</item>
-        <item>PZT</item>
-        <item>AEP</item>
-        <item>BSK</item>
+        <item>@string/side_title_first</item>
+        <item>@string/side_title_AGB</item>
+        <item>@string/side_title_TOP</item>
+        <item>@string/side_title_PGB</item>
+        <item>@string/side_title_BDA</item>
+        <item>@string/side_title_VMS</item>
+        <item>@string/side_title_PZT</item>
+        <item>@string/side_title_AEP</item>
+        <item>@string/side_title_BSK</item>
     </string-array>
 
     <string-array name="pref_group_values">
@@ -86,19 +77,26 @@
         <item>2</item>
     </string-array>
 
-    <!--О Приложении-->
-    <string name="title_activity_developer">About app</string>
-    <string name="todo">TODO</string>
+    <!-- About -->
+    <string name="title_activity_developer">About</string>
 
-    <string name="Story">Story</string>
-
-    <string name="dev_text">"        My GGPK is a simple, universal and accessible application for all. With it, everyone can quickly watch their schedule, without being distracted by annoying ads. Thanks to this creation, you will not be late and miss couples. This application is made specifically for the Grodno State Polytechnic College and absolutely all of its students, regardless of specialties, courses and semesters.  "</string>
-    <string name="dev_title_me">Developed: Samoilo Antony</string>
-    <string name="dev_title_developer">Story</string>
+    <string name="dev_text">My GGPK is a simple, universal and accessible application for all.
+        With it, everyone can quickly watch their schedule, without being distracted by annoying ads.
+        Thanks to this creation, you will not be late and miss couples.
+        This application is made specifically for the Grodno State Polytechnic College
+        and absolutely all of its students, regardless of specialties, courses and semesters.
+    </string>
+    <string name="dev_title_developer">Developed by Samoilo Antony</string>
     <string name="dev_title_share">Share</string>
     <string name="dev_title_rate">Rate app</string>
     <string name="dev_title_mail">Message to developer</string>
     <string name="dev_title_git">Source code</string>
+
+    <!-- Common -->
     <string name="back">back</string>
+    <string name="pref_title_new_schedule_style">New schedule style</string>
+    <string name="pref_summary_group">Выбери группу</string>
+    <string name="pref_summary_language">Choose language</string>
+    <string name="pref_summary_style">beta</string>
 
 </resources>

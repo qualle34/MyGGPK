@@ -1,4 +1,4 @@
-package com.qualle.myggpk;
+package incorporated.qualle.myggpk;
 
 import android.content.Context;
 import android.content.Intent;
@@ -25,10 +25,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.android.material.navigation.NavigationView;
-import com.qualle.myggpk.group.Group;
-import com.qualle.myggpk.group.GroupFabric;
-import com.qualle.myggpk.settings.AppSettings;
-import com.qualle.myggpk.style.ExternalStyle;
+import com.qualle.myggpk.R;
+
+import incorporated.qualle.myggpk.group.Group;
+import incorporated.qualle.myggpk.group.GroupFabric;
+import incorporated.qualle.myggpk.settings.AppSettings;
+import incorporated.qualle.myggpk.style.ExternalStyle;
 
 import java.util.Locale;
 
@@ -63,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         groupId = AppSettings.getGroupId(getApplicationContext());
 
         swipe = findViewById(R.id.swipe);
+        swipe.setProgressViewOffset(false, 70, 200);
         swipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
 
             @Override
@@ -187,7 +190,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    private void secret() { // test
+    private void secret() {
         if (AppSettings.isVip(getApplicationContext())) {
             Toast.makeText(this, "Vip", Toast.LENGTH_SHORT).show();
         }
@@ -265,11 +268,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (isOnline()) {
             webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
 
+            if (AppSettings.getStyleSettings(getApplicationContext())) {
+                webView.loadData(ExternalStyle.getWithStyle(url, css), "text/html; charset=UTF-8", null);
+            } else {
+                webView.loadUrl(url);
+            }
+
         } else {
             webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ONLY);
+            if (AppSettings.getStyleSettings(getApplicationContext())) {
+               // webView.loadData(ExternalStyle.getWithStyle(url, css), "text/html; charset=UTF-8", null);
+            } else {
+                webView.loadUrl(url);
+            }
         }
-
-        webView.loadData(ExternalStyle.getWithStyle(url, css), "text/html; charset=UTF-8", null);
 
         swipe.setRefreshing(true);
         webView.setWebViewClient(new WebViewClient() {

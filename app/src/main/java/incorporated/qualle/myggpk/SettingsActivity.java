@@ -1,5 +1,6 @@
-package com.qualle.myggpk;
+package incorporated.qualle.myggpk;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
@@ -8,6 +9,8 @@ import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
+
+import com.qualle.myggpk.R;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -28,8 +31,15 @@ public class SettingsActivity extends AppCompatActivity {
             setPreferencesFromResource(R.xml.root_preferences, rootKey);
 
             PreferenceSummary(findPreference("pref_group_list"));
-            PreferenceSummary(findPreference("pref_night_mode"));
             PreferenceSummary(findPreference("pref_language_list"));
+            findPreference("pref_new_schedule").setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+                @Override
+                public boolean onPreferenceChange(Preference preference, Object newValue) {
+                    SharedPreferences sharedPreferences = android.preference.PreferenceManager.getDefaultSharedPreferences(getContext());
+                    sharedPreferences.edit().putBoolean("pref_new_style", true).apply();
+                    return true;
+                }
+            });
 
             findPreference("pref_restart").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
@@ -62,13 +72,13 @@ public class SettingsActivity extends AppCompatActivity {
         private void PreferenceSummary(Preference preference) {
 
             preference.setOnPreferenceChangeListener(PreferenceSummaryToValueListener);
-
             PreferenceSummaryToValueListener.onPreferenceChange(preference,
                     PreferenceManager
                             .getDefaultSharedPreferences(preference.getContext())
                             .getString(preference.getKey(), ""));
         }
     }
+
 
     public void back(View view) {
         super.onBackPressed();

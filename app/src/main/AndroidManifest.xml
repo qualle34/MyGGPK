@@ -17,7 +17,7 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity
-            android:name=".MainActivity"
+            android:name="incorporated.qualle.myggpk.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -28,7 +28,7 @@
         </activity>
 
         <activity
-            android:name=".DeveloperActivity"
+            android:name="incorporated.qualle.myggpk.DeveloperActivity"
             android:label="@string/title_activity_developer"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
@@ -40,7 +40,7 @@
         </activity>
 
         <activity
-            android:name=".SettingsActivity"
+            android:name="incorporated.qualle.myggpk.SettingsActivity"
             android:label="@string/title_activity_settings"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">

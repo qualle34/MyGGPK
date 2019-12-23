@@ -1,42 +1,39 @@
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <PreferenceCategory>
+    <ListPreference
+        app:defaultValue="1"
+        app:entries="@array/pref_group_title"
+        app:entryValues="@array/pref_group_values"
+        app:icon="@drawable/ic_home"
+        app:key="pref_group_list"
+        app:summary="@string/pref_summary_group"
+        app:title="@string/pref_title_group" />
 
-        <ListPreference
-            app:defaultValue="1"
-            app:entries="@array/pref_group_title"
-            app:entryValues="@array/pref_group_values"
-            app:icon="@drawable/ic_home"
-            app:key="pref_group_list"
-            app:summary="TODO"
-            app:title="@string/pref_title_group" />
+    <SwitchPreferenceCompat
+        app:defaultValue="true"
+        app:icon="@drawable/ic_moon"
+        app:key="pref_new_schedule"
+        app:summary="@string/pref_summary_style"
+        app:title="@string/pref_title_new_schedule_style" />
 
-        <SwitchPreferenceCompat
-            app:icon="@drawable/ic_moon"
-            app:key="pref_night_mode"
-            app:summary="TODO"
-            app:title="@string/pref_title_night_mode" />
+    <ListPreference
+        app:defaultValue="1"
+        app:entries="@array/pref_language_title"
+        app:entryValues="@array/pref_language_value"
+        app:icon="@drawable/ic_translate"
+        app:key="pref_language_list"
+        app:summary="@string/pref_summary_language"
+        app:title="@string/pref_title_language" />
 
-        <ListPreference
-            app:defaultValue="1"
-            app:entries="@array/pref_language_title"
-            app:entryValues="@array/pref_language_value"
-            app:icon="@drawable/ic_translate"
-            app:key="pref_language_list"
-            app:summary="TODO"
-            app:title="@string/pref_title_language" />
+    <Preference
+        app:icon="@drawable/ic_refresh"
+        app:key="pref_restart"
+        app:summary="@string/pref_title_summary_restart"
+        app:title="@string/pref_title_restart" />
 
-        <Preference
-            app:icon="@drawable/ic_refresh"
-            app:key="pref_restart"
-            app:summary="TODO"
-            app:title="@string/pref_title_restart" />
-
-        <Preference
-            app:icon="@drawable/ic_settings"
-            app:summary="@string/app_version"
-            app:title="@string/app_name" />
-
-    </PreferenceCategory>
+    <Preference
+        app:icon="@drawable/ic_settings"
+        app:summary="@string/app_version"
+        app:title="@string/app_name" />
 
 </PreferenceScreen>

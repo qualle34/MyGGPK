@@ -1,4 +1,4 @@
-package com.qualle.myggpk;
+package incorporated.qualle.myggpk;
 
 import android.content.Context;
 

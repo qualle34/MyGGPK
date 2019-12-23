@@ -1,4 +1,4 @@
-package com.qualle.myggpk.group;
+package incorporated.qualle.myggpk.group;
 
 public class Group {
 

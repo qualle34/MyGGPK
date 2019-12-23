@@ -1,4 +1,4 @@
-package com.qualle.myggpk;
+package incorporated.qualle.myggpk;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,29 +13,32 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.qualle.myggpk.settings.AppSettings;
+import com.qualle.myggpk.R;
+
+import incorporated.qualle.myggpk.settings.AppSettings;
 
 public class DeveloperActivity extends AppCompatActivity {
 
-    private TextView developer;
-    private final String myMail = "qualle.inc@gmail.com";
-    private final String subject = "Отзыв о My GGPK";
-    private final String appUrl = "https://play.google.com/store/apps/details?id=incorporated.qualle.myggpk";
-    private final String gitUrl = "https://github.com/qualle34/MyGGPK";
-    private final String secPassword = "uselesspassword";
+    private static final String DEVELOPER_MAIL = "qualle.inc@gmail.com";
+    private static final String SUBJECT = "Отзыв о My GGPK";
+    private static final String MOBILE_MARKET_URL = "market://details?id=incorporated.qualle.myggpk";
+    private static final String WEB_MARKET_URL = "https://play.google.com/store/apps/details?id=incorporated.qualle.myggpk";
+    private static final String GIT_URL = "https://github.com/qualle34/MyGGPK";
+    private static final String PASSWORD = "uselesspassword";
+
     private EditText inputPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_developer);
-       // onLongPress();
+        onLongPress();
     }
 
     public void onMailClick(View view) {
         Intent sendMail = new Intent(Intent.ACTION_SEND);
-        sendMail.putExtra(Intent.EXTRA_EMAIL, myMail);
-        sendMail.putExtra(Intent.EXTRA_SUBJECT, subject);
+        sendMail.putExtra(Intent.EXTRA_EMAIL, DEVELOPER_MAIL);
+        sendMail.putExtra(Intent.EXTRA_SUBJECT, SUBJECT);
 
         sendMail.setType("message/rfc822");
         startActivity(Intent.createChooser(sendMail, "Выберите почтовый клиент"));
@@ -45,40 +48,40 @@ public class DeveloperActivity extends AppCompatActivity {
 
         try {
             startActivity(new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("market://details?id=" + getPackageName())));
+                    Uri.parse(MOBILE_MARKET_URL)));
 
         } catch (ActivityNotFoundException e) {
             startActivity(new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("http://play.google.com/store/apps/details?id=" + getPackageName())));
+                    Uri.parse(WEB_MARKET_URL)));
         }
     }
 
     public void onShareClick(View view) {
         Intent share = new Intent(Intent.ACTION_SEND);
         share.setType("text/plain");
-        String Text = "My GGPK: " + appUrl;
+        String Text = "My GGPK: " + WEB_MARKET_URL;
 
         share.putExtra(Intent.EXTRA_TEXT, Text);
         startActivity(Intent.createChooser(share, "Поделиться"));
     }
 
     public void onGitHubClick(View view) {
-        Intent webSite = new Intent(Intent.ACTION_VIEW, Uri.parse(gitUrl));
+        Intent webSite = new Intent(Intent.ACTION_VIEW, Uri.parse(GIT_URL));
         startActivity(webSite);
     }
 
-//    public void onLongPress() {
-//        developer = findViewById(R.id.developer);
-//        developer.setOnLongClickListener(
-//                new View.OnLongClickListener() {
-//                    @Override
-//                    public boolean onLongClick(View v) {
-//                        onDeveloperClick();
-//                        return true;
-//                    }
-//                }
-//        );
-//    }
+    public void onLongPress() {
+        TextView developer = findViewById(R.id.developer);
+        developer.setOnLongClickListener(
+                new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        onDeveloperClick();
+                        return true;
+                    }
+                }
+        );
+    }
 
     public void onDeveloperClick() {
         AlertDialog.Builder builder = new AlertDialog.Builder(DeveloperActivity.this);
@@ -91,7 +94,7 @@ public class DeveloperActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int id) {
                 String input = inputPassword.getText().toString();
 
-                if (input.equals(secPassword)) {
+                if (input.equals(PASSWORD)) {
                    AppSettings.setVip(getApplicationContext(), true);
 
                 } else {

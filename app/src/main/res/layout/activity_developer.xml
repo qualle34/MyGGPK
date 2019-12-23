@@ -6,14 +6,14 @@
     android:layout_height="match_parent"
     android:background="@color/primaryDark"
     android:orientation="vertical"
-    tools:context=".DeveloperActivity">
+    tools:context="incorporated.qualle.myggpk.DeveloperActivity">
 
     <View
         android:id="@+id/bg"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginTop="100dp"
-        android:background="@drawable/bg"
+        android:background="@drawable/bg_top"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -39,6 +39,7 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
         android:text="@string/title_activity_developer"
         android:textSize="23sp"
         app:layout_constraintBottom_toTopOf="@+id/bg"
@@ -62,6 +63,18 @@
         app:layout_constraintTop_toTopOf="@+id/bg" />
 
     <TextView
+        android:id="@+id/developer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/dev_title_developer"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/about" />
+
+    <TextView
         android:id="@+id/mail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -69,7 +82,7 @@
         android:gravity="center|start"
         android:onClick="onMailClick"
         android:text="@string/dev_title_mail"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/image_mail"
         app:layout_constraintTop_toTopOf="@+id/image_mail" />
 
@@ -81,7 +94,7 @@
         android:gravity="center|start"
         android:onClick="onRateClick"
         android:text="@string/dev_title_rate"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/image_rate"
         app:layout_constraintTop_toTopOf="@+id/image_rate" />
 
@@ -93,7 +106,7 @@
         android:gravity="center|start"
         android:onClick="onShareClick"
         android:text="@string/dev_title_share"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/image_share"
         app:layout_constraintTop_toTopOf="@+id/image_share" />
 
@@ -104,27 +117,27 @@
         android:layout_marginStart="24dp"
         android:onClick="onGitHubClick"
         android:text="@string/dev_title_git"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/image_git"
         app:layout_constraintTop_toTopOf="@+id/image_git" />
 
     <ImageView
         android:id="@+id/image_mail"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="32dp"
         android:contentDescription="@string/dev_title_mail"
         android:src="@drawable/ic_mail"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/about" />
+        app:layout_constraintTop_toBottomOf="@+id/developer" />
 
     <ImageView
         android:id="@+id/image_rate"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="32dp"
         android:contentDescription="@string/dev_title_git"
         android:src="@drawable/ic_star"
         app:layout_constraintStart_toStartOf="parent"
@@ -132,10 +145,10 @@
 
     <ImageView
         android:id="@+id/image_share"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="32dp"
         android:contentDescription="@string/dev_title_rate"
         android:src="@drawable/ic_share"
         app:layout_constraintStart_toStartOf="parent"
@@ -143,10 +156,10 @@
 
     <ImageView
         android:id="@+id/image_git"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="32dp"
         android:contentDescription="@string/dev_title_share"
         android:src="@drawable/ic_fire"
         app:layout_constraintStart_toStartOf="parent"
