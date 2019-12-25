@@ -11,19 +11,9 @@ public class AppSettings {
         return Integer.parseInt(sharedPreferences.getString("pref_group_list", "1"));
     }
 
-    public static boolean getNightModeSettings(Context applicationContext) {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext);
-        return sharedPreferences.getString("pref_night_mode_list", "false").equals("true");
-    }
-
     public static int getLanguageSettings(Context applicationContext) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext);
         return Integer.parseInt(sharedPreferences.getString("pref_language_list", "1"));
-    }
-
-    public static boolean getStyleSettings(Context applicationContext) {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext);
-        return sharedPreferences.getBoolean("pref_new_style", true);
     }
 
     public static String getHtml(Context applicationContext, String url) {

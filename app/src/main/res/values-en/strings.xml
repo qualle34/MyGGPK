@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">My GGPK</string>
-    <string name="app_version">2.0</string>
-
     <!-- Main -->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="side_title_first">First year</string>
+    <string name="side_title_first">First</string>
     <string name="side_title_AGB">AGB</string>
     <string name="side_title_TOP">TOR</string>
     <string name="side_title_PGB">PGB</string>
@@ -17,11 +14,12 @@
     <string name="side_title_PZT">PZT</string>
     <string name="side_title_AEP">AEP</string>
     <string name="side_title_BSK">BSK</string>
+    <string name="side_title_PTO">PTO</string>
 
     <string name="action_settings">Settings</string>
     <string name="action_developer">About app</string>
     <string name="action_website">Website</string>
-    <string name="action_main">Main</string>
+    <string name="action_main">Main schedule</string>
 
     <!-- Settings -->
     <string name="title_activity_settings">Settings</string>
@@ -31,7 +29,11 @@
     <string name="pref_title_language">Language</string>
     <string name="pref_title_notifications">Notifications</string>
     <string name="pref_title_restart">Restart</string>
-    <string name="pref_title_summary_restart">Click to apply settings</string>
+    <string name="pref_title_new_schedule_style">New schedule style</string>
+    <string name="pref_summary_group">Выбери группу</string>
+    <string name="pref_summary_language">Choose language</string>
+    <string name="pref_summary_restart">Click to apply settings</string>
+    <string name="pref_summary_style">beta</string>
 
     <string-array name="pref_group_title">
         <item>@string/side_title_first</item>
@@ -43,6 +45,7 @@
         <item>@string/side_title_PZT</item>
         <item>@string/side_title_AEP</item>
         <item>@string/side_title_BSK</item>
+        <item>@string/side_title_PTO</item>
     </string-array>
 
     <string-array name="pref_group_values">
@@ -55,6 +58,7 @@
         <item>7</item>
         <item>8</item>
         <item>9</item>
+        <item>10</item>
     </string-array>
 
     <string-array name="pref_night_mode_title">
@@ -79,13 +83,7 @@
 
     <!-- About -->
     <string name="title_activity_developer">About</string>
-
-    <string name="dev_text">My GGPK is a simple, universal and accessible application for all.
-        With it, everyone can quickly watch their schedule, without being distracted by annoying ads.
-        Thanks to this creation, you will not be late and miss couples.
-        This application is made specifically for the Grodno State Polytechnic College
-        and absolutely all of its students, regardless of specialties, courses and semesters.
-    </string>
+    <string name="dev_text">"   My GGPK is a simple, universal and accessible application for all. With it, everyone can quickly watch their schedule, without being distracted by annoying ads. Thanks to this creation, you will not be late and miss couples. This application is made specifically for the Grodno State Polytechnic College and absolutely all of its students, regardless of specialties, courses and semesters."</string>
     <string name="dev_title_developer">Developed by Samoilo Antony</string>
     <string name="dev_title_share">Share</string>
     <string name="dev_title_rate">Rate app</string>
@@ -94,9 +92,5 @@
 
     <!-- Common -->
     <string name="back">back</string>
-    <string name="pref_title_new_schedule_style">New schedule style</string>
-    <string name="pref_summary_group">Выбери группу</string>
-    <string name="pref_summary_language">Choose language</string>
-    <string name="pref_summary_style">beta</string>
 
 </resources>

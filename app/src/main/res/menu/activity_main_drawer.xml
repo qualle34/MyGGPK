@@ -3,53 +3,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <item
+        android:id="@+id/first"
+        android:icon="@drawable/first"
+        android:title="@string/side_title_first" />
 
-        <item
-            android:id="@+id/first"
-            android:icon="@drawable/first"
-            android:title="@string/side_title_first" />
+    <item
+        android:id="@+id/agb"
+        android:icon="@drawable/agb"
+        android:title="@string/side_title_AGB" />
 
-        <item
-            android:id="@+id/agb"
-            android:icon="@drawable/agb"
-            android:title="@string/side_title_AGB" />
+    <item
+        android:id="@+id/tor"
+        android:icon="@drawable/tor"
+        android:title="@string/side_title_TOP" />
 
-        <item
-            android:id="@+id/tor"
-            android:icon="@drawable/tor"
-            android:title="@string/side_title_TOP" />
+    <item
+        android:id="@+id/pgb"
+        android:icon="@drawable/pgb"
+        android:title="@string/side_title_PGB" />
 
-        <item
-            android:id="@+id/pgb"
-            android:icon="@drawable/pgb"
-            android:title="@string/side_title_PGB" />
+    <item
+        android:id="@+id/bda"
+        android:icon="@drawable/bda"
+        android:title="@string/side_title_BDA" />
 
-        <item
-            android:id="@+id/bda"
-            android:icon="@drawable/bda"
-            android:title="@string/side_title_BDA" />
+    <item
+        android:id="@+id/vms"
+        android:icon="@drawable/vms"
+        android:title="@string/side_title_VMS" />
 
-        <item
-            android:id="@+id/vms"
-            android:icon="@drawable/vms"
-            android:title="@string/side_title_VMS" />
+    <item
+        android:id="@+id/pzt"
+        android:icon="@drawable/pzt"
+        android:title="@string/side_title_PZT" />
 
-        <item
-            android:id="@+id/pzt"
-            android:icon="@drawable/pzt"
-            android:title="@string/side_title_PZT" />
+    <item
+        android:id="@+id/aep"
+        android:icon="@drawable/aep"
+        android:title="@string/side_title_AEP" />
 
-        <item
-            android:id="@+id/aep"
-            android:icon="@drawable/aep"
-            android:title="@string/side_title_AEP" />
+    <item
+        android:id="@+id/bsk"
+        android:icon="@drawable/bsk"
+        android:title="@string/side_title_BSK" />
 
-        <item
-            android:id="@+id/bsk"
-            android:icon="@drawable/bsk"
-            android:title="@string/side_title_BSK" />
-
-    </group>
+    <item
+        android:id="@+id/pto"
+        android:icon="@drawable/pto"
+        android:title="@string/side_title_PTO" />
 
 </menu>

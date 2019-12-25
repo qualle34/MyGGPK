@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
@@ -18,7 +17,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -52,7 +50,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         firstRun();
         secret();
         changeLanguage();
-        changeTheme();
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -115,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.action_main:
-                Intent main = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ggpk.by/"));
+                Intent main = new Intent(Intent.ACTION_VIEW, Uri.parse(GroupFabric.getGroup(groupId).getMainUrl()));
                 startActivity(main);
                 break;
         }
@@ -173,6 +170,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 load(groupId);
                 break;
 
+            case R.id.pto:
+                groupId = 10;
+                load(groupId);
+                break;
+
             default:
                 break;
         }
@@ -215,6 +217,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             menu.findItem(R.id.pzt).setTitle("ПЗТ");
             menu.findItem(R.id.aep).setTitle("АЭП");
             menu.findItem(R.id.bsk).setTitle("БСК");
+            menu.findItem(R.id.pto).setTitle("ПТО");
             navigationView.setNavigationItemSelectedListener(this);
 
         } else {
@@ -233,6 +236,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             menu.findItem(R.id.pzt).setTitle("PZT");
             menu.findItem(R.id.aep).setTitle("AEP");
             menu.findItem(R.id.bsk).setTitle("BSK");
+            menu.findItem(R.id.pto).setTitle("PTO");
             navigationView.setNavigationItemSelectedListener(this);
         }
     }
@@ -246,44 +250,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         res.updateConfiguration(conf, dm);
     }
 
-    private void changeTheme() {
-
-        if (AppSettings.getNightModeSettings(getApplicationContext())) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-
-        } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        }
-    }
-
     private boolean isOnline() {
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         return connectivityManager.getActiveNetworkInfo() != null;
     }
 
     private void load(String url) throws ExecutionException, InterruptedException {
-        String css = getResources().getString(R.string.css);
         webView = findViewById(R.id.webView);
         webView.getSettings().setDomStorageEnabled(true);
 
-        if (isOnline()) {
-            webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
-
-            if (AppSettings.getStyleSettings(getApplicationContext())) {
-                webView.loadData(ExternalStyle.getWithStyle(getApplicationContext(),url, css, true), "text/html; charset=UTF-8", null);
-
-            } else {
-                webView.loadUrl(url);
-            }
-
-        } else {
-            webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ONLY);
-            if (AppSettings.getStyleSettings(getApplicationContext())) {
-                webView.loadData(ExternalStyle.getWithStyle(getApplicationContext(),url, css, false), "text/html; charset=UTF-8", null);
-            } else {
-                webView.loadUrl(url);
-            }
-        }
+        String css = getResources().getString(R.string.css);
+        webView.loadData(ExternalStyle.getWithStyle(getApplicationContext(), url, css, isOnline()), "text/html; charset=UTF-8", null);
 
         swipe.setRefreshing(true);
         webView.setWebViewClient(new WebViewClient() {

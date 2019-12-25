@@ -9,13 +9,6 @@
         app:summary="@string/pref_summary_group"
         app:title="@string/pref_title_group" />
 
-    <SwitchPreferenceCompat
-        app:defaultValue="true"
-        app:icon="@drawable/ic_moon"
-        app:key="pref_new_schedule"
-        app:summary="@string/pref_summary_style"
-        app:title="@string/pref_title_new_schedule_style" />
-
     <ListPreference
         app:defaultValue="1"
         app:entries="@array/pref_language_title"
@@ -28,7 +21,7 @@
     <Preference
         app:icon="@drawable/ic_refresh"
         app:key="pref_restart"
-        app:summary="@string/pref_title_summary_restart"
+        app:summary="@string/pref_summary_restart"
         app:title="@string/pref_title_restart" />
 
     <Preference

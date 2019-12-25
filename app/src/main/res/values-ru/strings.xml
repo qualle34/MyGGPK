@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">My GGPK</string>
-    <string name="app_version">2.0</string>
-
     <!-- Main -->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -17,11 +14,12 @@
     <string name="side_title_PZT">ПЗТ</string>
     <string name="side_title_AEP">АЭП</string>
     <string name="side_title_BSK">БСК</string>
+    <string name="side_title_PTO">ПТО</string>
 
     <string name="action_settings">Настройки</string>
     <string name="action_developer">О приложении</string>
     <string name="action_website">Сайт</string>
-    <string name="action_main">Основное</string>
+    <string name="action_main">Основное расписание</string>
 
     <!-- Settings -->
     <string name="title_activity_settings">Настройки</string>
@@ -31,7 +29,11 @@
     <string name="pref_title_language">Язык</string>
     <string name="pref_title_notifications">Уведомления</string>
     <string name="pref_title_restart">Перезапустить</string>
-    <string name="pref_title_summary_restart">Нажмите для применения настроек</string>
+    <string name="pref_summary_restart">Нажмите для применения настроек</string>
+    <string name="pref_title_new_schedule_style">Новый стиль расписания</string>
+    <string name="pref_summary_group">Выбери группу</string>
+    <string name="pref_summary_language">Выбери язык</string>
+    <string name="pref_summary_style">beta</string>
 
     <string-array name="pref_group_title">
         <item>@string/side_title_first</item>
@@ -43,6 +45,7 @@
         <item>@string/side_title_PZT</item>
         <item>@string/side_title_AEP</item>
         <item>@string/side_title_BSK</item>
+        <item>@string/side_title_PTO</item>
     </string-array>
 
     <string-array name="pref_group_values">
@@ -55,6 +58,7 @@
         <item>7</item>
         <item>8</item>
         <item>9</item>
+        <item>10</item>
     </string-array>
 
     <string-array name="pref_night_mode_title">
@@ -79,12 +83,7 @@
 
     <!-- About -->
     <string name="title_activity_developer">О Приложении</string>
-    <string name="dev_text">My GGPK - это простое, универсальное и доступное всем приложение.
-        С его помощью каждый сможет быстро смотреть свое расписание, не отвлекаясь на надоедливые рекламы.
-        Благодаря сея творению вы не будете опаздывать и пропускать пары.
-        Данное приложение сделано специально для Гродненского Государственного Политехнического Колледжа
-        и абсолютно всех его учащихся не зависимо от специальностей, курсов и семестров.
-    </string>
+    <string name="dev_text">"   My GGPK - это простое, универсальное и доступное всем приложение. С его помощью каждый сможет быстро смотреть свое расписание, не отвлекаясь на надоедливые рекламы. Благодаря сея творению вы не будете опаздывать и пропускать пары. Данное приложение сделано специально для Гродненского Государственного Политехнического Колледжа и абсолютно всех его учащихся не зависимо от специальностей, курсов и семестров."</string>
     <string name="dev_title_developer">Разработал: Самойло Антоний</string>
     <string name="dev_title_share">Поделиться</string>
     <string name="dev_title_rate">Оценить</string>
@@ -93,9 +92,5 @@
 
     <!-- Common -->
     <string name="back">назад</string>
-    <string name="pref_title_new_schedule_style">Новый стиль расписания</string>
-    <string name="pref_summary_group">Выбери группу</string>
-    <string name="pref_summary_language">Выбери язык</string>
-    <string name="pref_summary_style">beta</string>
 
 </resources>
