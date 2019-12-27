@@ -83,7 +83,7 @@
 
     <!-- About -->
     <string name="title_activity_developer">About</string>
-    <string name="dev_text">"   My GGPK is a simple, universal and accessible application for all. With it, everyone can quickly watch their schedule, without being distracted by annoying ads. Thanks to this creation, you will not be late and miss couples. This application is made specifically for the Grodno State Polytechnic College and absolutely all of its students, regardless of specialties, courses and semesters."</string>
+    <string name="dev_text">"   My GGPK is a simple, universal and accessible application for all. With it, everyone can quickly watch their schedule, without being distracted by annoying ads. Thanks to this creation, you will not be late and miss lessons. This application is made specifically for the Grodno State Polytechnic College and absolutely all of its students, regardless of specialties, courses and semesters."</string>
     <string name="dev_title_developer">Developed by Samoilo Antony</string>
     <string name="dev_title_share">Share</string>
     <string name="dev_title_rate">Rate app</string>

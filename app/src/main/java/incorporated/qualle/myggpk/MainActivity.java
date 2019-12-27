@@ -30,6 +30,7 @@ import incorporated.qualle.myggpk.group.GroupFabric;
 import incorporated.qualle.myggpk.settings.AppSettings;
 import incorporated.qualle.myggpk.style.ExternalStyle;
 
+import java.io.IOException;
 import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 
@@ -255,7 +256,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return connectivityManager.getActiveNetworkInfo() != null;
     }
 
-    private void load(String url) throws ExecutionException, InterruptedException {
+    private void load(String url) throws ExecutionException, InterruptedException, IOException {
         webView = findViewById(R.id.webView);
         webView.getSettings().setDomStorageEnabled(true);
 
@@ -266,7 +267,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         webView.setWebViewClient(new WebViewClient() {
 
             public void onReceivedError(WebView view, int errorCode, String description, String failingURL) {
-                webView.loadUrl("file:///android_asset/offline.html");
+                webView.loadUrl("file:///android_asset/offline");
             }
 
             public void onPageFinished(WebView view, String url) {
@@ -279,7 +280,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Group group = GroupFabric.getGroup(id);
         try {
             load(group.getUrl());
-        } catch (ExecutionException | InterruptedException ignore) {
+        } catch (ExecutionException | InterruptedException | IOException ignore) {
         }
     }
 }

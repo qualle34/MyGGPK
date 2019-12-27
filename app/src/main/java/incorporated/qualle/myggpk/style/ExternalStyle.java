@@ -1,12 +1,17 @@
 package incorporated.qualle.myggpk.style;
 
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.os.AsyncTask;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Reader;
 import java.net.URL;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.concurrent.ExecutionException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -43,14 +48,19 @@ public class ExternalStyle {
         }
     }
 
-    public static String getWithStyle(Context applicationContext, String url, String css, boolean isOnline) throws ExecutionException, InterruptedException {
+    public static String getWithStyle(Context applicationContext, String url, String css, boolean isOnline) throws ExecutionException, InterruptedException, IOException {
         HtmlManager htmlManager = new HtmlManager();
         htmlManager.execute(url);
         if (isOnline) {
             AppSettings.setHtml(applicationContext, url, htmlManager.get());
             return setStyle(htmlManager.get(), css);
         } else {
-            return setStyle(AppSettings.getHtml(applicationContext, url), css);
+            String html = AppSettings.getHtml(applicationContext, url);
+            if (html != null && !html.equals("")) {
+                return setStyle(html, css);
+            } else {
+                return getOfflinePage(applicationContext);
+            }
         }
     }
 
@@ -59,5 +69,12 @@ public class ExternalStyle {
         Pattern stylePattern = Pattern.compile("<style[^>]*>([\\s\\S]*)<\\/style>");
         Matcher matcher = stylePattern.matcher(html);
         return matcher.replaceAll(fontLink + "<style>" + css + "</style>");
+    }
+
+    private static String getOfflinePage(Context applicationContext) throws IOException {
+        AssetManager am = applicationContext.getAssets();
+        InputStream inputStream = am.open("offline.html");
+        java.util.Scanner s = new java.util.Scanner(inputStream).useDelimiter("\\A");
+        return s.hasNext() ? s.next() : "";
     }
 }
