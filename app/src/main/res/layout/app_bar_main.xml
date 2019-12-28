@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         app:contentInsetLeft="0dp"
         app:contentInsetStart="0dp"
-        android:elevation="3dp"
+        android:elevation="2dp"
         android:background="@drawable/bg_bottom">
 
         <TextView
