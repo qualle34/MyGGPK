@@ -1,42 +1,30 @@
- <resources>
+<resources>
 
-        <!-- Стандартная тема приложения -->
-        <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
-            <!--Цвет панели действий-->
-            <item name="colorPrimary">@color/colorPrimary</item>
-            <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-            <item name="colorAccent">@color/colorAccent</item>
-        </style>
+    <!-- Стандартная тема приложения -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <!--Цвет панели действий-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
 
-        <style name="AppTheme.NoActionBar">
-            <item name="windowActionBar">false</item>
-            <item name="windowNoTitle">true</item>
-        </style>
+    <style name="AppTheme1" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <!--Цвет панели действий-->
+        <item name="colorPrimary">@color/colorWhite</item>
+        <item name="colorPrimaryDark">@color/colorGrey</item>
+        <item name="colorAccent">@color/colorAccent</item>
 
-        <!--Главное меню панель действий-->
-        <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    </style>
 
-        <!--Меню-->
-        <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 
+    <!--Главное меню панель действий-->
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
+    <!--Меню-->
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-     <!--<style name="OrangeTheme" parent="Theme.AppCompat.Light.NoActionBar" >-->
-         <!--<item name="colorPrimary">@color/colorOrange</item>-->
-         <!--<item name="colorPrimaryDark">@color/colorOrangeDark</item>-->
-         <!--<item name="colorAccent">@color/colorOrange</item>-->
-     <!--</style>-->
-
-     <!--<style name="OrangeTheme.NoActionBar">-->
-         <!--<item name="windowActionBar">false</item>-->
-         <!--<item name="windowNoTitle">true</item>-->
-     <!--</style>-->
-
-     <!--&lt;!&ndash;Главное меню панель действий&ndash;&gt;-->
-     <!--<style name="OrangeTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />-->
-
-     <!--&lt;!&ndash;Меню&ndash;&gt;-->
-     <!--<style name="OrangeTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />-->
-
-
- </resources>
+</resources>

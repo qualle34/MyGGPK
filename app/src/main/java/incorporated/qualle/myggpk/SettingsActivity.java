@@ -1,17 +1,18 @@
 package incorporated.qualle.myggpk;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.support.v7.app.ActionBar;
 import android.preference.PreferenceManager;
+import android.text.Html;
 import android.view.MenuItem;
 
 
-@SuppressLint("ExportedPreferenceActivity")
 public class SettingsActivity extends AppCompatPreferenceActivity {
 
     @Override
@@ -22,7 +23,6 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
         addPreferencesFromResource(R.xml.settings_screen);
         PreferenceSummaryForGroup(findPreference("pref_group_list"));
         PreferenceSummaryForNightMode(findPreference("pref_night_mode_list"));
-        PreferenceSummaryForLanguage(findPreference("pref_language_list"));
 
         Preference reset = findPreference("pref_restart");
 
@@ -80,15 +80,6 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
                         .getString(preference.getKey(), " "));
     }
 
-    private void PreferenceSummaryForLanguage(Preference preference) {      // Summary
-
-        preference.setOnPreferenceChangeListener(PreferenceSummaryToValueListener);
-
-        PreferenceSummaryToValueListener.onPreferenceChange(preference,
-                PreferenceManager
-                        .getDefaultSharedPreferences(preference.getContext())
-                        .getString(preference.getKey(), " "));
-    }
 
     private static boolean isXLargeTablet(Context context) {
         return (context.getResources().getConfiguration().screenLayout
@@ -100,11 +91,11 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
         return isXLargeTablet(this);
     }
 
-
     private void setupActionBar() {      // Отображение панели действий
         ActionBar actionBar = getSupportActionBar();
 
         if (actionBar != null) {
+
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
     }
