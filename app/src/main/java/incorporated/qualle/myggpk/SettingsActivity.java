@@ -3,11 +3,14 @@ package incorporated.qualle.myggpk;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.support.v7.app.ActionBar;
 import android.preference.PreferenceManager;
+import android.text.Html;
 import android.view.MenuItem;
 
 
@@ -100,11 +103,11 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
         return isXLargeTablet(this);
     }
 
-
     private void setupActionBar() {      // Отображение панели действий
         ActionBar actionBar = getSupportActionBar();
 
         if (actionBar != null) {
+
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
     }

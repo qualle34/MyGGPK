@@ -20,11 +20,6 @@
         android:title="@string/pref_title_night_mode"
         android:summary="День"/>
 
-    <!--<Preference-->
-        <!--android:icon="@drawable/pref_painter"-->
-        <!--android:key="pref_color"-->
-        <!--android:title="Цвет"-->
-        <!--android:summary="Выбери цвет"/>-->
 
     <ListPreference
         android:defaultValue="1"
