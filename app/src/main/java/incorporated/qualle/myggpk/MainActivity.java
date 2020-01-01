@@ -23,7 +23,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.android.material.navigation.NavigationView;
-import com.qualle.myggpk.R;
 
 import incorporated.qualle.myggpk.group.Group;
 import incorporated.qualle.myggpk.group.GroupFabric;

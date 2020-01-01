@@ -1,8 +1,5 @@
 package incorporated.qualle.myggpk;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,7 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.qualle.myggpk.R;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import incorporated.qualle.myggpk.settings.AppSettings;
 
@@ -95,7 +93,7 @@ public class DeveloperActivity extends AppCompatActivity {
                 String input = inputPassword.getText().toString();
 
                 if (input.equals(PASSWORD)) {
-                   AppSettings.setVip(getApplicationContext(), true);
+                    AppSettings.setVip(getApplicationContext(), true);
 
                 } else {
                     dialog.cancel();

@@ -9,8 +9,6 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 
-import com.qualle.myggpk.R;
-
 public class SettingsActivity extends AppCompatActivity {
 
     @Override
