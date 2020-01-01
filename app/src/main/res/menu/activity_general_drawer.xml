@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="@string/side_title_schedule">
+        <menu>
+            <item
+                android:id="@+id/first_k"
+                android:icon="@drawable/side_first"
+                android:title="@string/side_title_first" />
+        </menu>
+    </item>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/AGB"
+            android:icon="@drawable/side_agb"
+            android:title="@string/side_title_AGB" />
+        <item
+            android:id="@+id/TAR"
+            android:icon="@drawable/side_tor"
+            android:title="@string/side_title_TAP" />
+        <item
+            android:id="@+id/PGB"
+            android:icon="@drawable/side_pgb"
+            android:title="@string/side_title_PGB" />
+        <item
+            android:id="@+id/BDA"
+            android:icon="@drawable/side_bda"
+            android:title="@string/side_title_BDA" />
+        <item
+            android:id="@+id/VMS"
+            android:icon="@drawable/side_vms"
+            android:title="@string/side_title_VMS" />
+        <item
+            android:id="@+id/PZT"
+            android:icon="@drawable/side_pzt"
+            android:title="@string/side_title_PZT" />
+        <item
+            android:id="@+id/AEP"
+            android:icon="@drawable/side_aep"
+            android:title="@string/side_title_AEP" />
+        <item
+            android:id="@+id/BSK"
+            android:icon="@drawable/side_bsk"
+            android:title="@string/side_title_BSB" />
+    </group>
+</menu>

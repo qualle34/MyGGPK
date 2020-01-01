@@ -1,13 +1,10 @@
 <resources>
     <string name="app_name">My GGPK</string>
-    <string name="app_version">1.15</string>
+    <string name="app_version">1.10</string>
 
     <!--Главный экран-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string name="day_tab_title">День</string>
-    <string name="main_tab_title">Основное</string>
 
     <string name="nav_header_title">Политехнический колледж</string>
     <string name="nav_header_desc">Navigation header</string>
@@ -34,7 +31,6 @@
 
     <string name="pref_title_group">Главный экран</string>
     <string name="pref_title_night_mode">Ночной режим</string>
-    <string name="pref_title_language">Язык</string>
     <string name="pref_title_notifications">Уведомления</string>
     <string name="pref_title_summary_notifications">будет доступно в будущем</string>
     <string name="pref_title_restart">Перезапустить</string>
@@ -90,12 +86,14 @@
 
     <string name="Story">Описание</string>
 
-    <string name="dev_text">"         My GGPK - это простое, универсальное и доступное всем приложение. С его помощью каждый сможет быстро смотреть свое расписание, не отвлекаясь на надоедливые рекламы. Благодаря сея творению вы не будете опаздывать и пропускать пары. Данное приложение сделано специально для Гродненского Государственного Политехнического Колледжа и абсолютно всех его учащихся не зависимо от специальностей, курсов и семестров.     "</string>
+    <string name="dev_text">
+        My GGPK - это простое, универсальное и доступное всем приложение. С его помощью каждый сможет быстро смотреть свое расписание, не отвлекаясь на надоедливые рекламы. Благодаря сея творению вы не будете опаздывать и пропускать пары. Данное приложение сделано специально для Гродненского Государственного Политехнического Колледжа и абсолютно всех его учащихся не зависимо от специальностей, курсов и семестров.
+    </string>
     <string name="dev_title_me">Разработал: Самойло Антоний</string>
     <string name="dev_title_developer">Описание</string>
     <string name="dev_title_share">Поделится</string>
     <string name="dev_title_rate">Оценить</string>
-    <string name="dev_title_mail">Письмо разработчику</string>
+    <string name="dev_title_mail">Почта</string>
 
 
 </resources>

@@ -103,6 +103,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
+        android:onClick="OnAboutClick"
         android:text="@string/dev_title_developer"
         android:textAlignment="viewStart"
         android:textColor="?android:attr/actionMenuTextColor"
