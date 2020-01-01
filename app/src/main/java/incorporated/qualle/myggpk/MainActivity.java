@@ -31,46 +31,48 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
-
 import io.fabric.sdk.android.Fabric;
-
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private WebView webView;
-    private SwipeRefreshLayout swipe;
+    WebView webView;
+    SwipeRefreshLayout swipe;
     ImageView DarkImage;
 
-    private String GroupURL;
-    private String URL;
+    String GroupURL;
+    String URL;
     static int TypeURL;
-    private String MainURL;
+    String MainURL;
 
     String ThemeInf;
     String LanguageInf;
     String DayTab;
-    private String MainTab;
+    String MainTab;
 
-    private TabLayout tabLayout;
+    TabLayout tabLayout;
+
+//    Boolean PasswordOne;
+//    Boolean PasswordTwo;
+//    Boolean PasswordThree;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         Fabric.with(this, new Crashlytics());
-
         setContentView(R.layout.activity_main);
 
         Boolean isFirstRun = getSharedPreferences("FIRST_RUN", MODE_PRIVATE).getBoolean("isfirstrun", true);
 
         if (isFirstRun) { // Первый запуск
-            Toast.makeText(this, "Выбери свою группу в настройках", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Выбери свою группу в настройках" , Toast.LENGTH_LONG).show();
 
             getSharedPreferences("FIRST_RUN", MODE_PRIVATE).edit().putBoolean("isfirstrun", false).commit();
         }
 
-        NewTheme(); // Пасхалочка
+//        NewTheme(); // Пасхалочка
         LanguageChanger();  // Смена языка
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -117,27 +119,23 @@ public class MainActivity extends AppCompatActivity
         LoadWeb();
     }
 
-    public void NewTheme() {
-        Boolean PasswordOne;
-        Boolean PasswordTwo;
-        Boolean PasswordThree;
+//    public void NewTheme() {
+//        PasswordOne = getSharedPreferences("PASSWORD_ONE", MODE_PRIVATE).getBoolean("password_one", false);
+//        PasswordTwo = getSharedPreferences("PASSWORD_TWO", MODE_PRIVATE).getBoolean("password_two", false);
+//        PasswordThree = getSharedPreferences("PASSWORD_THREE", MODE_PRIVATE).getBoolean("password_three", false);
+//
+//        if (PasswordOne){
+//            Toast.makeText(this, "1" , Toast.LENGTH_SHORT).show();
+//        }
+//        if (PasswordTwo){
+//            Toast.makeText(this, "2" , Toast.LENGTH_SHORT).show();
+//        }
+//        if (PasswordThree){
+//            Toast.makeText(this, "3" , Toast.LENGTH_SHORT).show();
+//        }
+//    }
 
-        PasswordOne = getSharedPreferences("PASSWORD_ONE", MODE_PRIVATE).getBoolean("password_one", false);
-        PasswordTwo = getSharedPreferences("PASSWORD_TWO", MODE_PRIVATE).getBoolean("password_two", false);
-        PasswordThree = getSharedPreferences("PASSWORD_THREE", MODE_PRIVATE).getBoolean("password_three", false);
-
-        if (PasswordOne) {
-            Toast.makeText(this, "1", Toast.LENGTH_SHORT).show();
-        }
-        if (PasswordTwo) {
-            Toast.makeText(this, "2", Toast.LENGTH_SHORT).show();
-        }
-        if (PasswordThree) {
-            Toast.makeText(this, "3", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    public void TabsChanger() {
+    public void TabsChanger(){
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -192,7 +190,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    public void LanguageChanger() {
+    public void LanguageChanger(){
 
         if (LanguageListener()) {
 
@@ -366,7 +364,7 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    public void ShitMethod() {
+    public void ShitMethod(){
 
         switch (GroupURL) {
             case "http://www.ggpk.by/Raspisanie/Files/P_KURS.html":  // 1
