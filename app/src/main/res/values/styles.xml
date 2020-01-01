@@ -13,9 +13,6 @@
 
         <item name="android:colorBackground">@color/primary</item>
 
-        <item name="colorSurface">@color/primary</item>
-        <item name="colorOnSurface">@color/text</item>
-
     </style>
 
     <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
@@ -30,9 +27,6 @@
         <item name="colorAccent">@color/accent</item>
 
         <item name="android:colorBackground">@color/primary</item>
-
-        <item name="colorSurface">@color/primary</item>
-        <item name="colorOnSurface">@color/text</item>
 
     </style>
 
