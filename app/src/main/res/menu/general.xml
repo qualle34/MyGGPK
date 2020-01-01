@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_refresh"
+        android:icon="@drawable/refresh_button"
+        android:title="@string/refreshBtn"
+
+        app:showAsAction="ifRoom"/>
+
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="1"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_developer"
+        android:orderInCategory="2"
+        android:title="@string/about"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/WebSite"
+        android:orderInCategory="3"
+        android:title="@string/WebSite"
+        app:showAsAction="never" />
+
+</menu>

@@ -1,46 +1,18 @@
 <resources>
     <string name="app_name">My GGPK</string>
-    <string name="app_version">1.15</string>
-
-    <!--Главный экран-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string name="day_tab_title">День</string>
-    <string name="main_tab_title">Основное</string>
-
-    <string name="nav_header_title">Политехнический колледж</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="general_btn_refresh">Обновить</string>
-
-    <string name="side_title_schedule">Расписание</string>
-
-    <string name="side_title_first">1 Курс</string>
-    <string name="side_title_AGB">АГБ</string>
-    <string name="side_title_TAP">ТОР</string>
-    <string name="side_title_PGB">ПГБ</string>
-    <string name="side_title_BDA">БДА</string>
-    <string name="side_title_VMS">ВМС</string>
-    <string name="side_title_PZT">ПЗТ</string>
-    <string name="side_title_AEP">АЭП</string>
-    <string name="side_title_BSB">БСК</string>
-
     <string name="action_settings">Настройки</string>
-    <string name="action_developer">О приложении</string>
-    <string name="action_website">Сайт</string>
-
-    <!--Настройки-->
     <string name="title_activity_settings">Настройки</string>
 
-    <string name="pref_title_group">Главный экран</string>
-    <string name="pref_title_night_mode">Ночной режим</string>
-    <string name="pref_title_language">Язык</string>
-    <string name="pref_title_notifications">Уведомления</string>
-    <string name="pref_title_summary_notifications">будет доступно в будущем</string>
-    <string name="pref_title_restart">Перезапустить</string>
-    <string name="pref_title_summary_restart">Нажмите для применения настроек</string>
 
-    <string-array name="pref_group_title">
+    <string name="confirm">Ок</string>
+    <string name="cancel">Отмена</string>
+
+
+    <string name="NameGeneralScreen">Главный экран</string>
+    <string-array name="group_type">
         <item>1 Курс</item>
         <item>АГБ</item>
         <item>ТОР</item>
@@ -52,7 +24,7 @@
         <item>БСК</item>
     </string-array>
 
-    <string-array name="pref_group_values">
+    <string-array name="group_values">
         <item>http://www.ggpk.by/Raspisanie/Files/P_KURS.html</item>
         <item>http://www.ggpk.by/Raspisanie/Files/AGB.html</item>
         <item>http://www.ggpk.by/Raspisanie/Files/TAR.html</item>
@@ -64,38 +36,109 @@
         <item>http://www.ggpk.by/Raspisanie/Files/BSB.html</item>
     </string-array>
 
-    <string-array name="pref_night_mode_title">
+    <array name="color_value">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </array>
+
+    <string-array name="color_name">
+        <item>@string/tomato</item>
+        <item>@string/tangerine</item>
+        <item>@string/banana</item>
+        <item>@string/basil</item>
+        <item>@string/sage</item>
+        <item>@string/peacock</item>
+        <item>@string/blueberry</item>
+        <item>@string/lavender</item>
+        <item>@string/grape</item>
+        <item>@string/flamingo</item>
+    </string-array>
+
+    <string name="tomato">Красный</string>
+    <string name="tangerine">Оранжевый</string>
+    <string name="banana">Жёлтый</string>
+    <string name="basil">Зелёный</string>
+    <string name="sage">Салатовый</string>
+    <string name="peacock">Голубой</string>
+    <string name="blueberry">Синий</string>
+    <string name="lavender">Серый</string>
+    <string name="grape">Фиолетовый</string>
+    <string name="flamingo">Розовый</string>
+
+    <string name="default_color">Default color</string>
+
+
+    <string-array name="theme">
         <item>Выкл</item>
         <item>Вкл</item>
     </string-array>
 
-    <string-array name="pref_night_mode_value">
+    <string-array name="theme_value">
         <item>1</item>
         <item>2</item>
     </string-array>
 
-    <string-array name="pref_language_title">
+    <string-array name="language">
         <item>Русский</item>
         <item>English</item>
     </string-array>
 
-    <string-array name="pref_language_value">
+    <string-array name="language_value">
         <item>1</item>
         <item>2</item>
     </string-array>
 
-    <!--О Приложении-->
-    <string name="title_activity_developer">О Приложении</string>
+    <string name="NameNotifications">Уведомления</string>
+
+    <string name="NameDeveloper">Разработчики</string>
+    <string name="DeveloperName">Разработчики</string>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+    <!-- Example settings for Notifications -->
+
+    <string name="rasp">Расписание</string>
+
+    <string name="first_k">1 Курс</string>
+    <string name="AGB">АГБ</string>
+    <string name="TAP">ТОР</string>
+    <string name="PGB">ПГБ</string>
+    <string name="BDA">БДА</string>
+    <string name="VMS">ВМС</string>
+    <string name="PZT">ПЗТ</string>
+    <string name="AEP">АЭП</string>
+    <string name="BSB">БСК</string>
+
+    <string name="onSite">На сайт</string>
+    <string name="support">Поддержка</string>
+    <string name="politex">Политехнический колледж</string>
+    <string name="no_connection">TODO</string>
+    <string name="mail">Письмо Разработчику</string>
+    <string name="rate">Оценить Приложение</string>
+    <string name="share">Поделиться</string>
+    <string name="developer">Разработал</string>
+    <string name="me">Самойло Антоний</string>
     <string name="todo">TODO</string>
-
+    <string name="NameCollege">Политехнический Колледж</string>
+    <string name="about">О Приложении</string>
+    <string name="WebSite">Сайт</string>
+    <string name="DeveloperMe">Разработчик: Самойло Антоний</string>
     <string name="Story">Описание</string>
+    <string name="Text">My GGPK - это простое, универсальное и доступное всем приложение. С его помощью каждый сможет быстро смотреть свое расписание, не отвлекаясь на надоедливые рекламы. Благодаря сея творению вы не будете опаздывать и пропускать пары. Данное приложение сделано специально для Гродненского Государственного Политехнического Колледжа и абсолютно всех его учащихся не зависимо от специальностей, курсов и семестров.</string>
+    <string name="DeveloperScreenName">О приложении</string>
+    <string name="refreshBtn">refresh</string>
+    <string name="ColorTitle">Выберите цвет</string>
 
-    <string name="dev_text">"         My GGPK - это простое, универсальное и доступное всем приложение. С его помощью каждый сможет быстро смотреть свое расписание, не отвлекаясь на надоедливые рекламы. Благодаря сея творению вы не будете опаздывать и пропускать пары. Данное приложение сделано специально для Гродненского Государственного Политехнического Колледжа и абсолютно всех его учащихся не зависимо от специальностей, курсов и семестров.     "</string>
-    <string name="dev_title_me">Разработал: Самойло Антоний</string>
-    <string name="dev_title_developer">Описание</string>
-    <string name="dev_title_share">Поделится</string>
-    <string name="dev_title_rate">Оценить</string>
-    <string name="dev_title_mail">Письмо разработчику</string>
+    <string name="version">1.9</string>
 
 
 </resources>

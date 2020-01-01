@@ -1,50 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <ListPreference
         android:defaultValue="1"
-        android:entries="@array/pref_group_title"
-        android:entryValues="@array/pref_group_values"
-        android:icon="@drawable/pref_home"
-        android:key="pref_group_list"
-        android:title="@string/pref_title_group"
-        android:summary="Выбери группу"/>
+        android:entries="@array/group_type"
+        android:entryValues="@array/group_values"
+        android:icon="@drawable/home"
+        android:key="general_screen_group"
+        android:summary="Выбери группу"
+        android:title="Главный экран" />
 
     <ListPreference
         android:defaultValue="1"
-        android:entries="@array/pref_night_mode_title"
-        android:entryValues="@array/pref_night_mode_value"
-        android:icon="@drawable/pref_night_mode"
-        android:key="pref_night_mode_list"
-        android:title="@string/pref_title_night_mode"
-        android:summary="День"/>
+        android:entries="@array/theme"
+        android:entryValues="@array/theme_value"
+        android:icon="@drawable/night_mode"
+        android:key="general_screen_theme"
+        android:summary="День"
+        android:title="Ночной режим" />
 
-    <!--<Preference-->
-        <!--android:icon="@drawable/pref_painter"-->
-        <!--android:key="pref_color"-->
-        <!--android:title="Цвет"-->
-        <!--android:summary="Выбери цвет"/>-->
-
-    <ListPreference
-        android:defaultValue="1"
-        android:entries="@array/pref_language_title"
-        android:entryValues="@array/pref_language_value"
-        android:icon="@drawable/pref_language"
-        android:key="pref_language_list"
-        android:title="@string/pref_title_language"
-        android:summary="Русский"/>
+    <SwitchPreference
+        android:defaultValue="false"
+        android:icon="@drawable/bell"
+        android:key="switch_preference_1"
+        android:summary="будет доступно в будущем"
+        android:title="Уведомления" />
 
     <Preference
-        android:icon="@drawable/pref_refresh"
-        android:key="pref_restart"
-        android:title="@string/pref_title_restart"
-        android:summary="@string/pref_title_summary_restart"/>
+        android:icon="@drawable/refresh"
+        android:key="restart"
+        android:title="Перезапустить"
+        android:summary="Нажмите для применения настроек"/>
 
     <Preference
-        android:icon="@drawable/pref_version"
-        android:summary="@string/app_version"
+        android:icon="@drawable/mehanics"
+        android:summary="@string/version"
         android:title="@string/app_name">
+
     </Preference>
 
 </PreferenceScreen>

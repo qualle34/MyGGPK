@@ -1,8 +1,6 @@
 package incorporated.qualle.myggpk;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -14,17 +12,18 @@ import android.view.MenuItem;
 @SuppressLint("ExportedPreferenceActivity")
 public class SettingsActivity extends AppCompatPreferenceActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setupActionBar();
 
-        addPreferencesFromResource(R.xml.settings_screen);
-        PreferenceSummaryForGroup(findPreference("pref_group_list"));
-        PreferenceSummaryForNightMode(findPreference("pref_night_mode_list"));
-        PreferenceSummaryForLanguage(findPreference("pref_language_list"));
 
-        Preference reset = findPreference("pref_restart");
+        addPreferencesFromResource(R.xml.settings_screen);
+        PreferenceSummaryForGroup(findPreference("general_screen_group"));
+        PreferenceSummaryForNightMode(findPreference("general_screen_theme"));
+
+        Preference reset = findPreference("restart");
 
         reset.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
@@ -33,86 +32,80 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
                 return true;
             }
         });
+
     }
 
-    private static Preference.OnPreferenceChangeListener PreferenceSummaryToValueListener = new Preference.OnPreferenceChangeListener() {
+    //для  предпочтений (Summary)
+    private Preference.OnPreferenceChangeListener PreferenceSummaryListener = new Preference.OnPreferenceChangeListener() {
+
         @Override
         public boolean onPreferenceChange(Preference preference, Object value) {
             String stringValue = value.toString();
 
             if (preference instanceof ListPreference) {
-                // Для list preference устанавливает значение примечания
+
+                onRestart();
+
                 ListPreference listPreference = (ListPreference) preference;
                 int index = listPreference.findIndexOfValue(stringValue);
 
-                // Устанавливает новое значение примечания
                 preference.setSummary(
                         index >= 0
                                 ? listPreference.getEntries()[index]
                                 : null);
 
             } else {
-                // Для всех других настроек устанавливает примечание в значение
-                // простое строковое представление.
+
+                onRestart();
+
                 preference.setSummary(stringValue);
-            }
+
+        }
             return true;
         }
     };
 
+
     private void PreferenceSummaryForGroup (Preference preference) {      // Summary
 
-        preference.setOnPreferenceChangeListener(PreferenceSummaryToValueListener);
+        preference.setOnPreferenceChangeListener(PreferenceSummaryListener);
 
-        PreferenceSummaryToValueListener.onPreferenceChange(preference,
+        PreferenceSummaryListener.onPreferenceChange(preference,
                 PreferenceManager
                         .getDefaultSharedPreferences(preference.getContext())
                         .getString(preference.getKey(), " "));
+
+
+
     }
 
     private void PreferenceSummaryForNightMode(Preference preference) {      // Summary
 
-        preference.setOnPreferenceChangeListener(PreferenceSummaryToValueListener);
+        preference.setOnPreferenceChangeListener(PreferenceSummaryListener);
 
-        PreferenceSummaryToValueListener.onPreferenceChange(preference,
+        PreferenceSummaryListener.onPreferenceChange(preference,
                 PreferenceManager
                         .getDefaultSharedPreferences(preference.getContext())
                         .getString(preference.getKey(), " "));
+
     }
 
-    private void PreferenceSummaryForLanguage(Preference preference) {      // Summary
-
-        preference.setOnPreferenceChangeListener(PreferenceSummaryToValueListener);
-
-        PreferenceSummaryToValueListener.onPreferenceChange(preference,
-                PreferenceManager
-                        .getDefaultSharedPreferences(preference.getContext())
-                        .getString(preference.getKey(), " "));
-    }
-
-    private static boolean isXLargeTablet(Context context) {
-        return (context.getResources().getConfiguration().screenLayout
-                & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_XLARGE;
-    }
-
-    @Override
-    public boolean onIsMultiPane() {
-        return isXLargeTablet(this);
-    }
-
-
-    private void setupActionBar() {      // Отображение панели действий
+    // Отображение кнопки назад на главном экране настроек
+    public void setupActionBar() {
         ActionBar actionBar = getSupportActionBar();
 
         if (actionBar != null) {
+
             actionBar.setDisplayHomeAsUpEnabled(true);
+
         }
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {  // Кнопка назад на панели действий
-        switch (item.getItemId()) {  // Слушатель кнопки
-
+    // Кнопка назад на главном экране настроек
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
             case android.R.id.home:
                 super.onBackPressed();
                 return true;
@@ -120,4 +113,10 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
 }
+
+
+
+
+

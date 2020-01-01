@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "634089423416",
+    "firebase_url": "https://my-ggpk.firebaseio.com",
+    "project_id": "my-ggpk",
+    "storage_bucket": "my-ggpk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:634089423416:android:cc3a52632bf6b742",
+        "android_client_info": {
+          "package_name": "incorporated.qualle.myggpk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "634089423416-hsaeuk96944mhqeru5q3tql6a0ennnn7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "incorporated.qualle.myggpk",
+            "certificate_hash": "8ee68a9e3730b817b7bb5865ed899538497cb3fa"
+          }
+        },
+        {
+          "client_id": "634089423416-coe8fbbe5a4vi3q958oimspmju5ipe1q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBF2ml9OuRIasCXRrRqn8EqWrhUZbREqY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "634089423416-coe8fbbe5a4vi3q958oimspmju5ipe1q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
