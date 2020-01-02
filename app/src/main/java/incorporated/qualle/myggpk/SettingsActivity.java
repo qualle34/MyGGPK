@@ -27,7 +27,7 @@ public class SettingsActivity extends AppCompatActivity {
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             setPreferencesFromResource(R.xml.root_preferences, rootKey);
 
-            PreferenceSummary(findPreference("pref_group_list"));
+            PreferenceSummary(findPreference("pref_group_id_list"));
             PreferenceSummary(findPreference("pref_language_list"));
 
             findPreference("pref_restart").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {

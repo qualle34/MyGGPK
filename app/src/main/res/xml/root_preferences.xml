@@ -5,7 +5,7 @@
         app:entries="@array/pref_group_title"
         app:entryValues="@array/pref_group_values"
         app:icon="@drawable/ic_home"
-        app:key="pref_group_list"
+        app:key="pref_group_id_list"
         app:summary="@string/pref_summary_group"
         app:title="@string/pref_title_group" />
 

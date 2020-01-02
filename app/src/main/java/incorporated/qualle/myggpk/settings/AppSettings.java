@@ -8,7 +8,7 @@ public class AppSettings {
 
     public static int getGroupId(Context applicationContext){
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext);
-        return Integer.parseInt(sharedPreferences.getString("pref_group_list", "1"));
+        return Integer.parseInt(sharedPreferences.getString("pref_group_id_list", "1"));
     }
 
     public static int getLanguageSettings(Context applicationContext) {
