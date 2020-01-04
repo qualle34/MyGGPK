@@ -279,7 +279,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Group group = GroupFabric.getGroup(id);
         try {
             load(group.getUrl());
-        } catch (ExecutionException | InterruptedException | IOException ignore) {
+        } catch (ExecutionException | InterruptedException | IOException | NullPointerException ignore) {
         }
     }
 }

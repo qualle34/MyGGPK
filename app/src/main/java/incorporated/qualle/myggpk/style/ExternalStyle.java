@@ -49,11 +49,16 @@ public class ExternalStyle {
         HtmlManager htmlManager = new HtmlManager();
         htmlManager.execute(url);
         if (isOnline) {
-            AppSettings.setHtml(applicationContext, url, htmlManager.get());
-            return setStyle(htmlManager.get(), css);
+            String html = htmlManager.get();
+            if (html != null && !html.isEmpty()) {
+                AppSettings.setHtml(applicationContext, url, html);
+                return setStyle(html, css);
+            } else {
+                return getOfflinePage(applicationContext);
+            }
         } else {
             String html = AppSettings.getHtml(applicationContext, url);
-            if (html != null && !html.equals("")) {
+            if (html != null && !html.isEmpty()) {
                 return setStyle(html, css);
             } else {
                 return getOfflinePage(applicationContext);
